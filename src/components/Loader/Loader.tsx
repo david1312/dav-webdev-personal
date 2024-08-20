@@ -10,7 +10,6 @@ interface LoaderProps {
 const Loader: React.FC<LoaderProps> = ({ finishLoading }) => {
   useEffect(() => {
     const anim = anime.timeline({
-      direction: "alternate",
       complete: () => {
         finishLoading();
         console.log("finish");
@@ -19,34 +18,40 @@ const Loader: React.FC<LoaderProps> = ({ finishLoading }) => {
 
     anim
       .add({
-        targets: "#hexagon path",
-        strokeDashoffset: [anime.setDashoffset, 0],
+        targets: "#logo path",
+        delay: 300,
+        duration: 1500,
         easing: "easeInOutQuart",
-        duration: 1000,
-        delay: function (el, i) {
-          return i * 250;
-        },
+        strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
-        targets: "#hexagon #B",
-        duration: 1000,
-        opacity: 1,
+        targets: "#logo #D",
+        duration: 700,
         easing: "easeInOutQuart",
+        opacity: 1,
+      })
+      .add({
+        targets: "#logo",
+        delay: 500,
+        duration: 300,
+        easing: "easeInOutQuart",
+        opacity: 0,
+        scale: 0.1,
       });
   }, [finishLoading]);
 
   return (
     <Container>
       <svg
-        id="hexagon"
+        id="logo"
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
         css={svgStyles}
       >
         <g>
-          <g id="B" transform="translate(36, 33)" css={textStyles}>
+          <g id="D" transform="translate(36, 33)" css={textStyles}>
             <text>
-              <tspan x="0.141666985" y="33">
+              <tspan x="-1" y="34">
                 D
               </tspan>
             </text>
