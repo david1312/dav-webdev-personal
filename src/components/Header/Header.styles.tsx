@@ -27,9 +27,15 @@ export const HeaderWrapper = styled.header`
   }
 `;
 
+export const HeaderLogo = styled.div`
+  height: 48px;
+  width: 48px;
+`;
+
 export const Nav = styled.nav`
   ul {
     display: flex;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -40,6 +46,12 @@ export const Nav = styled.nav`
     counter-increment: item 1;
     color: var(--white);
 
+    a {
+      &:hover {
+        color: var(--green);
+      }
+    }
+
     &:before {
       content: "0" counter(item) ".";
       display: inline-block;
@@ -49,13 +61,7 @@ export const Nav = styled.nav`
       font-size: var(--fz-sm);
     }
   }
-
-  a {
-    text-decoration: none;
-    white-space: nowrap;
-
-    &:hover {
-      color: var(--green);
-    }
+  .link-btn {
+    margin-left: 1rem;
   }
 `;

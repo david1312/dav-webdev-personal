@@ -71,10 +71,24 @@ const Nav = styled.nav<HamburgerProps>`
     margin: 1rem 0;
     counter-increment: item 1;
     color: var(--white);
+    a {
+      &:hover {
+        color: var(--green);
+      }
+    }
+
+    &:before {
+      content: "0" counter(item) ".";
+      display: inline-block;
+      width: 25px;
+      margin-bottom: 5px;
+      color: var(--green);
+      font-size: var(--fz-sm);
+    }
   }
 
   a {
-    color: var(--green);
+    color: var(--white);
     text-decoration: none;
     font-size: var(--fz-lg);
 
@@ -89,6 +103,19 @@ const Hamburger: React.FC = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    event.preventDefault(); // Prevent the default action to ensure the menu closes first
+    const href = event.currentTarget.getAttribute("href");
+    setIsOpen(false);
+
+    // Use a small delay to allow the menu to close before navigating
+    setTimeout(() => {
+      window.location.href = href || "#";
+    }, 300);
   };
 
   return (
@@ -110,7 +137,9 @@ const Hamburger: React.FC = () => {
             <Link href="/work">Work</Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="#contact" onClick={handleLinkClick}>
+              Contact
+            </Link>
           </li>
         </ul>
       </Nav>

@@ -9,7 +9,7 @@ export const svgStyles = css`
 `;
 
 export const textStyles = css`
-  opacity: 0;
+  opacity: 1;
   fill: #64ffda;
   font-family: system-ui, Calibre-Medium, Calibre, sans-serif;
   font-size: 50px;
