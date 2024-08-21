@@ -117,10 +117,12 @@ const Hamburger: React.FC = () => {
     }
 
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+
       if (
         navRef.current &&
-        !navRef.current.contains(event.target as Node) &&
-        !event.target?.closest("button")
+        !navRef.current.contains(target) &&
+        !target.closest("button")
       ) {
         setIsOpen(false);
       }
