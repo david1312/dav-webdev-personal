@@ -1,16 +1,30 @@
 import styled from "@emotion/styled";
 
 export const HeaderWrapper = styled.header`
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
-`;
+  background-color: var(--navy);
+  color: var(--green);
+  padding: 0 25px;
+  height: var(--nav-height);
+  box-sizing: border-box;
+  transition: var(--transition);
+  font-size: var(--fz-sm);
+  &.hide {
+    transform: translateY(-100%);
+  }
 
-export const Logo = styled.div`
-  font-size: 1.5rem;
+  &.show {
+    transform: translateY(0);
+  }
+
+  @media (min-width: 769px) {
+    padding: 0 40px;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -23,14 +37,25 @@ export const Nav = styled.nav`
 
   li {
     margin: 0 1rem;
+    counter-increment: item 1;
+    color: var(--white);
+
+    &:before {
+      content: "0" counter(item) ".";
+      display: inline-block;
+      width: 25px;
+      margin-bottom: 5px;
+      color: var(--green);
+      font-size: var(--fz-sm);
+    }
   }
 
   a {
-    color: #fff;
     text-decoration: none;
+    white-space: nowrap;
 
     &:hover {
-      text-decoration: underline;
+      color: var(--green);
     }
   }
 `;
