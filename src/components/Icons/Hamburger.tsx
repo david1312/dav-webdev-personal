@@ -1,5 +1,4 @@
-// components/Hamburger.tsx
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import styled from "@emotion/styled";
 
@@ -7,7 +6,7 @@ interface HamburgerProps {
   isOpen: boolean;
 }
 
-const HamburgerButton = styled.button`
+const HamburgerButton = styled.button<HamburgerProps>`
   background: none;
   border: none;
   cursor: pointer;
@@ -16,8 +15,10 @@ const HamburgerButton = styled.button`
   justify-content: space-around;
   width: var(--hamburger-width);
   height: var(--hamburger-width);
-  z-index: 1001;
-  position: relative;
+  z-index: 1001; /* Ensure it's above the Nav */
+  position: fixed; /* Fix it in place */
+  top: 20px; /* Adjust positioning as necessary */
+  right: 20px; /* Adjust positioning as necessary */
   outline: none;
 
   div {
@@ -29,19 +30,17 @@ const HamburgerButton = styled.button`
     transform-origin: 1px;
 
     &:nth-of-type(1) {
-      transform: ${({ isOpen }: HamburgerProps) =>
-        isOpen ? "rotate(45deg)" : "rotate(0)"};
+      transform: ${({ isOpen }) => (isOpen ? "rotate(45deg)" : "rotate(0)")};
     }
 
     &:nth-of-type(2) {
-      opacity: ${({ isOpen }: HamburgerProps) => (isOpen ? "0" : "1")};
-      transform: ${({ isOpen }: HamburgerProps) =>
+      opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
+      transform: ${({ isOpen }) =>
         isOpen ? "translateX(20px)" : "translateX(0)"};
     }
 
     &:nth-of-type(3) {
-      transform: ${({ isOpen }: HamburgerProps) =>
-        isOpen ? "rotate(-45deg)" : "rotate(0)"};
+      transform: ${({ isOpen }) => (isOpen ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
 `;
@@ -59,7 +58,7 @@ const Nav = styled.nav<HamburgerProps>`
   align-items: center;
   justify-content: center;
   transition: right 0.3s var(--easing);
-  z-index: 1000;
+  z-index: 1000; /* Ensure it's below the HamburgerButton */
 
   ul {
     list-style: none;
@@ -71,51 +70,75 @@ const Nav = styled.nav<HamburgerProps>`
     margin: 1rem 0;
     counter-increment: item 1;
     color: var(--white);
-    a {
-      &:hover {
-        color: var(--green);
-      }
-    }
-
-    &:before {
-      content: "0" counter(item) ".";
-      display: inline-block;
-      width: 25px;
-      margin-bottom: 5px;
-      color: var(--green);
-      font-size: var(--fz-sm);
-    }
   }
 
   a {
-    color: var(--white);
+    color: var(--green);
     text-decoration: none;
     font-size: var(--fz-lg);
+    transition: color 0.3s ease;
 
     &:hover {
       text-decoration: underline;
+      color: var(--blue);
+    }
+  }
+
+  .resume-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--green);
+    border-radius: var(--border-radius);
+    color: var(--green);
+    font-size: var(--fz-md);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: var(--green-tint);
+      color: var(--dark-navy);
     }
   }
 `;
 
 const Hamburger: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const body = document.body;
+
+    if (isOpen) {
+      body.style.overflow = "hidden";
+      document.querySelector(".blur-overlay")?.classList.add("active");
+    } else {
+      body.style.overflow = "auto";
+      document.querySelector(".blur-overlay")?.classList.remove("active");
+    }
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        navRef.current &&
+        !navRef.current.contains(event.target as Node) &&
+        !event.target?.closest("button")
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLinkClick = (
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    event.preventDefault(); // Prevent the default action to ensure the menu closes first
-    const href = event.currentTarget.getAttribute("href");
+  const handleLinkClick = () => {
     setIsOpen(false);
-
-    // Use a small delay to allow the menu to close before navigating
-    setTimeout(() => {
-      window.location.href = href || "#";
-    }, 300);
   };
 
   return (
@@ -125,16 +148,22 @@ const Hamburger: React.FC = () => {
         <div />
         <div />
       </HamburgerButton>
-      <Nav isOpen={isOpen}>
+      <Nav ref={navRef} isOpen={isOpen}>
         <ul>
           <li>
-            <Link href="/">About</Link>
+            <Link href="#about" onClick={handleLinkClick}>
+              About
+            </Link>
           </li>
           <li>
-            <Link href="/about">Experience</Link>
+            <Link href="#experience" onClick={handleLinkClick}>
+              Experience
+            </Link>
           </li>
           <li>
-            <Link href="/work">Work</Link>
+            <Link href="#work" onClick={handleLinkClick}>
+              Work
+            </Link>
           </li>
           <li>
             <Link href="#contact" onClick={handleLinkClick}>
@@ -142,7 +171,17 @@ const Hamburger: React.FC = () => {
             </Link>
           </li>
         </ul>
+        <a
+          href="/resume.pdf"
+          className="resume-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleLinkClick}
+        >
+          Resume
+        </a>
       </Nav>
+      <div className="blur-overlay" />
     </>
   );
 };

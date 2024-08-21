@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const HeaderWrapper = styled.header`
+  z-index: 1003;
   position: fixed;
   top: 0;
   width: 100%;

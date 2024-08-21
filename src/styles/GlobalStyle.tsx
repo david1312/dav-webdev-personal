@@ -83,6 +83,21 @@ const GlobalStyles = () => (
         margin: 0 auto;
         fill: none;
       }
+      .blur-overlay {
+        height: 100vh;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 999;
+        display: none;
+        transition: 0.5s ease;
+      }
+
+      .blur-overlay.active {
+        display: block;
+      }
     `}
   />
 );
