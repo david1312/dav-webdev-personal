@@ -32,7 +32,10 @@ const GlobalStyles = () => (
       }
 
       main {
-        background-color: ;
+        @media (min-width: 769px) {
+          padding: 0 150px;
+        }
+        padding: 0 25px;
       }
 
       h1,

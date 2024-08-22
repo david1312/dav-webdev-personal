@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { HeaderLogo, HeaderWrapper, Nav } from "./Header.styles";
 import Hamburger from "@/components/common/Hamburger/Hamburger";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import Link from "next/link";
 import Button from "@/components/common/Button/Button";
 import Logo from "../common/Icons/Logo";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import { navLinks } from "@/utils/config";
 
 const Header: React.FC = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
-  const isMobile = useMediaQuery(769);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     let lastScrollTop = 0;
@@ -22,6 +24,13 @@ const Header: React.FC = () => {
         setIsScrollingDown(false);
       }
       lastScrollTop = scrollTop;
+
+      // Check if the scroll position is not at the top
+      if (scrollTop > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -34,29 +43,27 @@ const Header: React.FC = () => {
   return (
     <>
       <div className="blur-overlay" />
-      <HeaderWrapper className={isScrollingDown ? "hide" : "show"}>
+      <HeaderWrapper
+        className={isScrollingDown ? "hide" : "show"}
+        isMobile={isMobile}
+        isScrolled={isScrolled}
+      >
         <HeaderLogo>
           <Logo />
         </HeaderLogo>
         {isMobile ? (
-          <>
-            <Hamburger />
-          </>
+          <Hamburger />
         ) : (
-          <Nav>
+          <Nav isMobile={isMobile} isScrolled={isScrolled}>
             <ul>
-              <li>
-                <Link href="#about">About</Link>
-              </li>
-              <li>
-                <Link href="#experience">Experience</Link>
-              </li>
-              <li>
-                <Link href="#work">Work</Link>
-              </li>
-              <li>
-                <Link href="#contact">Contact</Link>
-              </li>
+              {navLinks.map((val, index) => {
+                return (
+                  <li key={index}>
+                    <Link href={val.href}>{val.name}</Link>
+                  </li>
+                );
+              })}
+
               <a
                 href="/resume.pdf"
                 target="_blank"

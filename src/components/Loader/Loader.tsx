@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect } from "react";
-import { Container } from "./Loader.styles";
+import { Container, ContainerContent } from "./Loader.styles";
 import anime from "animejs";
 import Logo from "@/components/common/Icons/Logo";
 
@@ -43,7 +43,9 @@ const Loader: React.FC<LoaderProps> = ({ finishLoading }) => {
 
   return (
     <Container>
-      <Logo />
+      <ContainerContent>
+        <Logo />
+      </ContainerContent>
     </Container>
   );
 };

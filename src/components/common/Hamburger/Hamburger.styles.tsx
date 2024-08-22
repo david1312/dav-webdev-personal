@@ -65,20 +65,23 @@ export const Nav = styled.nav<HamburgerProps>`
   }
 
   li {
-    margin: 1rem 0;
+    margin: 0 1rem;
     counter-increment: item 1;
     color: var(--white);
-  }
 
-  a {
-    color: var(--green);
-    text-decoration: none;
-    font-size: var(--fz-lg);
-    transition: color 0.3s ease;
+    a {
+      &:hover {
+        color: var(--green);
+      }
+    }
 
-    &:hover {
-      text-decoration: underline;
-      color: var(--blue);
+    &:before {
+      content: "0" counter(item) ".";
+      display: inline-block;
+      width: 30px;
+      margin-bottom: 15px;
+      color: var(--green);
+      font-size: var(--fz-sm);
     }
   }
 

@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { HamburgerButton, Nav } from "./Hamburger.styles";
+import { navLinks } from "@/utils/config";
+import Button from "../Button/Button";
 
 const Hamburger: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,35 +55,24 @@ const Hamburger: React.FC = () => {
       </HamburgerButton>
       <Nav ref={navRef} isOpen={isOpen}>
         <ul>
-          <li>
-            <Link href="#about" onClick={handleLinkClick}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="#experience" onClick={handleLinkClick}>
-              Experience
-            </Link>
-          </li>
-          <li>
-            <Link href="#work" onClick={handleLinkClick}>
-              Work
-            </Link>
-          </li>
-          <li>
-            <Link href="#contact" onClick={handleLinkClick}>
-              Contact
-            </Link>
-          </li>
+          {navLinks.map((val, index) => {
+            return (
+              <li key={index}>
+                <Link href={val.href} onClick={handleLinkClick}>
+                  {val.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <a
           href="/resume.pdf"
-          className="resume-button"
           target="_blank"
           rel="noopener noreferrer"
+          className="link-btn"
           onClick={handleLinkClick}
         >
-          Resume
+          <Button label="Resume" variant="big" />
         </a>
       </Nav>
       <div className="blur-overlay" />
