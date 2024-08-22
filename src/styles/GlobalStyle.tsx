@@ -25,15 +25,14 @@ const GlobalStyles = () => (
         margin: 0;
         font-family: var(--font-sans);
         color: var(--foreground-rgb);
-        background: linear-gradient(
-            to bottom,
-            transparent,
-            var(--background-end-rgb)
-          )
-          var(--background-start-rgb);
+        background-color: var(--navy);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+      }
+
+      main {
+        background-color: ;
       }
 
       h1,

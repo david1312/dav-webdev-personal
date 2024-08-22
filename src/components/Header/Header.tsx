@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { HeaderLogo, HeaderWrapper, Nav } from "./Header.styles";
-import Hamburger from "@/components/Icons/Hamburger";
+import Hamburger from "@/components/common/Hamburger/Hamburger";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Link from "next/link";
-import Button from "@/components/Button/Button";
-import Logo from "../Icons/Logo";
+import Button from "@/components/common/Button/Button";
+import Logo from "../common/Icons/Logo";
 
 const Header: React.FC = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);

@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { Container } from "./Loader.styles";
 import anime from "animejs";
-import Logo from "@/components/Icons/Logo";
+import Logo from "@/components/common/Icons/Logo";
 
 interface LoaderProps {
   finishLoading: () => void;
