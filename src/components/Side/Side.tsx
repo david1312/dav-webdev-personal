@@ -1,4 +1,3 @@
-import React from "react";
 import { SideWrapper } from "./Side.styles";
 import { useIsMobileContext } from "@/context/IsMobileContext";
 

@@ -1,6 +1,7 @@
 interface SocialMedia {
   name: string;
   url: string;
+  icon: string;
 }
 
 interface NavLink {
@@ -26,23 +27,18 @@ export const email: string = "davidbernadi13@gmail.com";
 export const socialMedia: SocialMedia[] = [
   {
     name: "GitHub",
-    url: "https://github.com/bchiang7",
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com/bchiang7",
-  },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/bchiang7",
+    url: "https://github.com/david1312",
+    icon: "FaGithub",
   },
   {
     name: "Linkedin",
-    url: "https://www.linkedin.com/in/bchiang7",
+    url: "https://www.linkedin.com/in/david1396/",
+    icon: "FaLinkedin",
   },
   {
-    name: "Codepen",
-    url: "https://codepen.io/bchiang7",
+    name: "Instagram",
+    url: "https://www.instagram.com/davidb1312",
+    icon: "FaInstagram",
   },
 ];
 

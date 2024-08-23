@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { Container, ContainerContent } from "./Loader.styles";
 import anime from "animejs";
-import Logo from "@/components/common/Icons/Logo";
+import Logo from "@/components/Common/Icons/Logo";
 
 interface LoaderProps {
   finishLoading: () => void;
@@ -13,7 +13,6 @@ const Loader: React.FC<LoaderProps> = ({ finishLoading }) => {
     const anim = anime.timeline({
       complete: () => {
         finishLoading();
-        console.log("finish");
       },
     });
 
