@@ -25,15 +25,17 @@ const GlobalStyles = () => (
         margin: 0;
         font-family: var(--font-sans);
         color: var(--foreground-rgb);
-        background: linear-gradient(
-            to bottom,
-            transparent,
-            var(--background-end-rgb)
-          )
-          var(--background-start-rgb);
+        background-color: var(--navy);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+      }
+
+      main {
+        @media (min-width: 769px) {
+          padding: 0 150px;
+        }
+        padding: 0 25px;
       }
 
       h1,
@@ -82,6 +84,21 @@ const GlobalStyles = () => (
         display: block;
         margin: 0 auto;
         fill: none;
+      }
+      .blur-overlay {
+        height: 100vh;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 999;
+        display: none;
+        transition: 0.5s ease;
+      }
+
+      .blur-overlay.active {
+        display: block;
       }
     `}
   />
