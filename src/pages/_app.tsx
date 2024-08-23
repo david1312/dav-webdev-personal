@@ -4,9 +4,10 @@ import { useState } from "react";
 import Loader from "@/components/Loader/Loader";
 import GlobalStyles from "@/styles/GlobalStyle";
 import Head from "next/head";
-import { defaultMetadata, email } from "@/utils/config";
+import { defaultMetadata, email } from "@/utils/contants";
 import Side from "@/components/Side/Side";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import Footer from "@/components/Footer/Footer";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -29,6 +30,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             <a href={`mailto:${email}`}>{email}</a>
           </Side>
           <Component {...pageProps} />
+          <Footer />
         </>
       )}
     </>
