@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { HamburgerButton, Nav } from "./Hamburger.styles";
-import { navLinks } from "@/utils/config";
+import { navLinks } from "@/utils/contants";
 import Button from "../Button/Button";
 
 const Hamburger: React.FC = () => {

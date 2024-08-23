@@ -5,7 +5,7 @@ import Link from "next/link";
 import Button from "@/components/common/Button/Button";
 import Logo from "../common/Icons/Logo";
 import { useIsMobile } from "@/hooks/useIsMobile";
-import { navLinks } from "@/utils/config";
+import { navLinks } from "@/utils/contants";
 
 const Header: React.FC = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
