@@ -6,34 +6,30 @@ import GlobalStyles from "@/styles/GlobalStyle";
 import Head from "next/head";
 import { defaultMetadata, email } from "@/utils/contants";
 import Side from "@/components/Side/Side";
-import { useIsMobile } from "@/hooks/useIsMobile";
 import Footer from "@/components/Footer/Footer";
+import { IsMobileProvider } from "@/context/IsMobileContext";
+import MetaHead from "@/components/MetaHead/MetaHead";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [loading, setLoading] = useState<boolean>(true);
-  const isMobile = useIsMobile();
 
   return (
-    <>
-      <Head>
-        <title>{defaultMetadata.title}</title>
-        <meta name="description" content={defaultMetadata.description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+    <IsMobileProvider>
+      <MetaHead />
       <GlobalStyles />
       {loading ? (
         <Loader finishLoading={() => setLoading(false)} />
       ) : (
         <>
           <Header />
-          <Side position="right" isMobile={isMobile}>
+          <Side position="right">
             <a href={`mailto:${email}`}>{email}</a>
           </Side>
           <Component {...pageProps} />
           <Footer />
         </>
       )}
-    </>
+    </IsMobileProvider>
   );
 };
 

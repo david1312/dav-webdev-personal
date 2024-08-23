@@ -4,13 +4,13 @@ import Hamburger from "@/components/common/Hamburger/Hamburger";
 import Link from "next/link";
 import Button from "@/components/common/Button/Button";
 import Logo from "../common/Icons/Logo";
-import { useIsMobile } from "@/hooks/useIsMobile";
 import { navLinks } from "@/utils/contants";
+import { useIsMobileContext } from "@/context/IsMobileContext";
 
 const Header: React.FC = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobileContext();
 
   useEffect(() => {
     let lastScrollTop = 0;

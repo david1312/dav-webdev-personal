@@ -18,7 +18,7 @@ export const breakpoints: { mobile: number; tablet: number; desktop: number } =
 export const defaultMetadata: { title: string; description: string } = {
   title: "David Bernadi | Software Engineer & Frontend Enthusiast",
   description:
-    "Welcome to the personal site of David Bernadi, a Software Engineer with a strong focus on Frontend Development. Discover my experience, view work samples, and get in touch to collaborate on modern web projects.",
+    "Welcome to the personal site of David Bernadi, a Software Engineer with a strong focus on Frontend Development. Discover my experience, work projects, and get in touch to collaborate on modern web projects.",
 };
 
 export const email: string = "davidbernadi13@gmail.com";
