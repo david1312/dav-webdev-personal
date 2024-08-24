@@ -1,20 +1,36 @@
 import styled from "@emotion/styled";
 
-export const IntroWrapper = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 100px); /* Full height minus the header height */
+interface IntroStylesProps {
+  isMobile: boolean;
+}
+
+export const IntroWrapper = styled.section<IntroStylesProps>`
+  padding-top: ${({ isMobile }) => (isMobile ? "0" : "40px")};
+  margin-top: 100px;
+  height: 100vh;
   text-align: left;
-  color: var(--white); /* Adjust text color as needed */
 `;
 
-export const IntroContent = styled.div`
-  margin: 0 auto;
-
+export const IntroContent = styled.div<IntroStylesProps>`
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: var(--lightest-slate);
+    font-size: ${({ isMobile }) => (isMobile ? "var(--fz-heading)" : "72px")};
+    font-family: var(--font-sans);
+    &.intro-desc {
+      line-height: 0.9;
+      color: var(--slate);
+    }
+  }
+  h4 {
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+    font-weight: 400;
+
+    @media (max-width: 480px) {
+      margin: 0 0 20px 2px;
+    }
   }
 
   p {
