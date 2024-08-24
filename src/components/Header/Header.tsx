@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { HeaderLogo, HeaderWrapper, Nav } from "./Header.styles";
-import Hamburger from "@/components/Common/Hamburger/Hamburger";
+import Hamburger from "./Hamburger";
 import Link from "next/link";
 import Button from "@/components/Common/Button/Button";
 import Logo from "@/components/Common/Icons/Logo";
 import { navLinks } from "@/utils/contants";
 import { useIsMobileContext } from "@/context/IsMobileContext";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 const Header: React.FC = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { isMobile } = useIsMobileContext();
+  const handleSmoothScroll = useSmoothScroll();
 
   useEffect(() => {
     let lastScrollTop = 0;
@@ -59,7 +61,9 @@ const Header: React.FC = () => {
               {navLinks.map((val, index) => {
                 return (
                   <li key={index}>
-                    <Link href={val.href}>{val.name}</Link>
+                    <Link href={val.href} onClick={handleSmoothScroll}>
+                      {val.name}
+                    </Link>
                   </li>
                 );
               })}

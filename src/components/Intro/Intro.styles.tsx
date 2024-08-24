@@ -1,40 +1,47 @@
 import styled from "@emotion/styled";
+import { fadeInAnimation, fadeInUpAnimation } from "@/styles/animation";
 
 interface IntroStylesProps {
   isMobile: boolean;
 }
 
 export const IntroWrapper = styled.section<IntroStylesProps>`
-  padding-top: ${({ isMobile }) => (isMobile ? "0" : "40px")};
-  margin-top: 100px;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
   text-align: left;
-`;
 
-export const IntroContent = styled.div<IntroStylesProps>`
-  h1 {
-    line-height: 1.1;
-    color: var(--lightest-slate);
-    font-size: ${({ isMobile }) => (isMobile ? "var(--fz-heading)" : "72px")};
-    font-family: var(--font-sans);
-    &.intro-desc {
-      line-height: 0.9;
-      color: var(--slate);
-    }
-  }
   h4 {
     color: var(--green);
     font-family: var(--font-mono);
-    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+    font-size: ${({ isMobile }) =>
+      isMobile ? "var(--fz-sm)" : "var(--fz-md)"};
     font-weight: 400;
+    ${({}) => fadeInUpAnimation(0.8)}; /* Fade-in with no delay */
+  }
 
-    @media (max-width: 480px) {
-      margin: 0 0 20px 2px;
+  h1 {
+    line-height: ${({ isMobile }) => (isMobile ? "1.5" : "1.1")};
+    color: var(--lightest-slate);
+    font-size: ${({ isMobile }) => (isMobile ? "var(--fz-heading)" : "72px")};
+    font-family: var(--font-sans);
+    ${({}) => fadeInUpAnimation(1)}; /* Fade-in with 0.2s delay */
+
+    &.intro-desc {
+      line-height: ${({ isMobile }) => (isMobile ? "1" : "0.9")};
+      color: var(--slate);
     }
   }
 
   p {
-    font-size: 1.25rem;
     line-height: 1.5;
+    font-size: ${({ isMobile }) =>
+      isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
+    color: var(--slate);
+    ${({}) => fadeInUpAnimation(1.2)}; /* Fade-in with 0.6s delay */
   }
 `;
