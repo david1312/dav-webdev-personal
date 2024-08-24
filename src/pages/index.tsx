@@ -6,8 +6,6 @@ export default function Home() {
     <main>
       <Intro />
       <About />
-      <About />
-      <About />
     </main>
   );
 }
