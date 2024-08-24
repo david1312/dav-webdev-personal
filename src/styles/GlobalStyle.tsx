@@ -66,11 +66,32 @@ const GlobalStyles = () => (
         position: absolute;
         z-index: 999;
         display: none;
-        transition: 0.5s ease;
+        transition: 0.5s var(--easing);
       }
 
       .blur-overlay.active {
         display: block;
+      }
+
+      .underline-animation {
+        position: relative;
+        color: var(--green);
+        text-decoration: none; /* Optional: remove default underline */
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 1px;
+          background-color: var(--green);
+          transition: width 0.3s var(--easing);
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
       }
     `}
   />

@@ -23,7 +23,7 @@ export const HamburgerButton = styled.button<HamburgerProps>`
     width: 100%;
     height: 2px;
     background-color: var(--green);
-    transition: all 0.3s ease;
+    transition: var(--transition);
     position: relative;
     transform-origin: 1px;
 
@@ -93,7 +93,7 @@ export const Nav = styled.nav<HamburgerProps>`
     color: var(--green);
     font-size: var(--fz-md);
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: var(--transition);
 
     &:hover {
       background-color: var(--green-tint);
