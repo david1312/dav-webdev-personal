@@ -20,7 +20,7 @@ const Intro: React.FC = () => {
           target="_blank"
           className="underline-animation"
         >
-          OCBC Indonesia
+          Bank OCBC Indonesia
         </Link>
         .
       </p>

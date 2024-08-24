@@ -3,10 +3,12 @@ import Link from "next/link";
 import { HamburgerButton, Nav } from "./Hamburger.styles";
 import { navLinks } from "@/utils/contants";
 import Button from "@/components/Common/Button/Button";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 const Hamburger: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+  const handleSmoothScroll = useSmoothScroll();
 
   useEffect(() => {
     const body = document.body;
@@ -42,8 +44,11 @@ const Hamburger: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     setIsOpen(false);
+    handleSmoothScroll(e);
   };
 
   return (

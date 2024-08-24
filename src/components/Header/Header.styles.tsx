@@ -57,16 +57,16 @@ export const Nav = styled.nav<HeaderWrapperProps>`
     animation: fadeInUp 0.5s ease forwards;
 
     &:nth-of-type(1) {
-      animation-delay: 0.2s;
+      animation-delay: 0.1s;
     }
     &:nth-of-type(2) {
-      animation-delay: 0.4s;
+      animation-delay: 0.3s;
     }
     &:nth-of-type(3) {
-      animation-delay: 0.6s;
+      animation-delay: 0.5s;
     }
     &:nth-of-type(4) {
-      animation-delay: 0.8s;
+      animation-delay: 0.7s;
     }
 
     a {
