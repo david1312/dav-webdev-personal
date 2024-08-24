@@ -25,8 +25,8 @@ const Intro: React.FC = () => {
         .
       </p>
       <p>
-        Hey there!👋 Welcome to my little corner of the web. Here, you can check
-        out my projects, get to know a bit about my journey, and see what I’ve
+        Hey there!👋 Welcome to my little corner of the web. Here, you can get
+        to know a bit about my journey, check out my projects, and see what I’ve
         been up to.
       </p>
     </IntroWrapper>

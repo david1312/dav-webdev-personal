@@ -12,6 +12,7 @@ const useSmoothScroll = () => {
           behavior: "smooth",
         });
       }
+      history.pushState(null, "", `#${targetId}`);
     },
     []
   );

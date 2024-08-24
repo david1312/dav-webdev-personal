@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { fadeInAnimation, fadeInUpAnimation } from "@/styles/animation";
+import { fadeInUpAnimation } from "@/styles/animation";
 
 interface IntroStylesProps {
   isMobile: boolean;
