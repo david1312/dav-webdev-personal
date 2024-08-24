@@ -3,7 +3,7 @@ import { HeaderLogo, HeaderWrapper, Nav } from "./Header.styles";
 import Hamburger from "@/components/Common/Hamburger/Hamburger";
 import Link from "next/link";
 import Button from "@/components/Common/Button/Button";
-import Logo from "../Common/Icons/Logo";
+import Logo from "@/components/Common/Icons/Logo";
 import { navLinks } from "@/utils/contants";
 import { useIsMobileContext } from "@/context/IsMobileContext";
 

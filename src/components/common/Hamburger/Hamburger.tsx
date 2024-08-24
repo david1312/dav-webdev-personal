@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { HamburgerButton, Nav } from "./Hamburger.styles";
 import { navLinks } from "@/utils/contants";
-import Button from "../Button/Button";
+import Button from "@/components/Common/Button/Button";
 
 const Hamburger: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
