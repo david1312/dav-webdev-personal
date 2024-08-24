@@ -1,7 +1,4 @@
-// components/Logo.tsx
-
 /** @jsxImportSource @emotion/react */
-import React from "react";
 import { svgStyles, textStyles } from "./Logo.styles"; // Adjust the import path as necessary
 
 const Logo: React.FC = () => {

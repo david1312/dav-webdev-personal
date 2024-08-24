@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { HeaderLogo, HeaderWrapper, Nav } from "./Header.styles";
-import Hamburger from "@/components/common/Hamburger/Hamburger";
+import Hamburger from "@/components/Common/Hamburger/Hamburger";
 import Link from "next/link";
-import Button from "@/components/common/Button/Button";
-import Logo from "../common/Icons/Logo";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import Button from "@/components/Common/Button/Button";
+import Logo from "../Common/Icons/Logo";
 import { navLinks } from "@/utils/contants";
+import { useIsMobileContext } from "@/context/IsMobileContext";
 
 const Header: React.FC = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const isMobile = useIsMobile();
+  const { isMobile } = useIsMobileContext();
 
   useEffect(() => {
     let lastScrollTop = 0;

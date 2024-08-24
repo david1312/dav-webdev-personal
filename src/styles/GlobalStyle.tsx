@@ -13,14 +13,6 @@ const GlobalStyles = () => (
         --background-end-rgb: var(--navy);
       }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --foreground-rgb: var(--lightest-slate);
-          --background-start-rgb: var(--dark-navy);
-          --background-end-rgb: var(--navy-shadow);
-        }
-      }
-
       body {
         margin: 0;
         font-family: var(--font-sans);
@@ -61,30 +53,10 @@ const GlobalStyles = () => (
         list-style: none;
       }
 
-      button {
-        cursor: pointer;
-        background: none;
-        border: none;
-      }
-
-      /* Add other global styles here */
-
       .text-balance {
         text-wrap: balance;
       }
 
-      .intro {
-        width: max-content;
-        max-width: 100px;
-      }
-
-      .svg-intro {
-        width: 100%;
-        height: 100%;
-        display: block;
-        margin: 0 auto;
-        fill: none;
-      }
       .blur-overlay {
         height: 100vh;
         width: 100%;

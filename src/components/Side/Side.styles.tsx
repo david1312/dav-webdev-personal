@@ -12,6 +12,13 @@ export const SideWrapper = styled.div<{
   display: ${({ isMobile }) => (isMobile ? "none" : "flex")};
   flex-direction: column;
   align-items: center;
+  list-style: none;
+
+  li {
+    a {
+      margin: 10px;
+    }
+  }
 
   &::after {
     content: "";
@@ -25,7 +32,6 @@ export const SideWrapper = styled.div<{
   a {
     color: var(--light-slate);
     margin: 20px auto;
-    padding: 10px;
     font-family: var(--font-mono);
     font-size: var(--fz-xxs);
     line-height: var(--fz-lg);

@@ -3,37 +3,31 @@ import Header from "@/components/Header/Header";
 import { useState } from "react";
 import Loader from "@/components/Loader/Loader";
 import GlobalStyles from "@/styles/GlobalStyle";
-import Head from "next/head";
-import { defaultMetadata, email } from "@/utils/contants";
-import Side from "@/components/Side/Side";
-import { useIsMobile } from "@/hooks/useIsMobile";
 import Footer from "@/components/Footer/Footer";
+import { IsMobileProvider } from "@/context/IsMobileContext";
+import MetaHead from "@/components/MetaHead/MetaHead";
+import SideRight from "@/components/Side/SideRight";
+import SideLeft from "@/components/Side/SideLeft";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [loading, setLoading] = useState<boolean>(true);
-  const isMobile = useIsMobile();
 
   return (
-    <>
-      <Head>
-        <title>{defaultMetadata.title}</title>
-        <meta name="description" content={defaultMetadata.description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+    <IsMobileProvider>
+      <MetaHead />
       <GlobalStyles />
       {loading ? (
         <Loader finishLoading={() => setLoading(false)} />
       ) : (
         <>
           <Header />
-          <Side position="right" isMobile={isMobile}>
-            <a href={`mailto:${email}`}>{email}</a>
-          </Side>
+          <SideLeft />
+          <SideRight />
           <Component {...pageProps} />
           <Footer />
         </>
       )}
-    </>
+    </IsMobileProvider>
   );
 };
 
