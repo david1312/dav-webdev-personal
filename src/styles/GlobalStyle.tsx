@@ -101,7 +101,7 @@ const GlobalStyles = () => (
         display: flex;
         align-items: center;
         position: relative;
-        margin: 10px 0 40px;
+        margin-top: 10px;
         width: 100%;
         font-size: clamp(26px, 5vw, var(--fz-heading));
         white-space: nowrap;

@@ -8,6 +8,7 @@ interface NavLink {
   name: string;
   href: string;
 }
+
 // use less than math to calculate
 export const breakpoints: { mobile: number; tablet: number; desktop: number } =
   {
@@ -58,5 +59,41 @@ export const navLinks: NavLink[] = [
   {
     name: "Contact",
     href: "#contact",
+  },
+];
+
+interface TechStack {
+  title: string;
+  items: string[];
+}
+
+export const techStacks: TechStack[] = [
+  {
+    title: "Programming Languages",
+    items: ["Javascript", "Typescript", "HTML", "CSS", "Golang", "PHP"],
+  },
+  {
+    title: "Libraries & Frameworks",
+    items: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Redux",
+      "i18next",
+      "RxJS",
+      "Emotion",
+      "styled-component",
+      "Tailwind",
+      "Vue",
+      "Nuxt",
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    items: ["Git", "Vercel", "Docker", "Webpack", "S3", "Jira", "Figma"],
+  },
+  {
+    title: "Database",
+    items: ["MySql", "Postgre", "Redis", "MongoDB", "Firebase"],
   },
 ];

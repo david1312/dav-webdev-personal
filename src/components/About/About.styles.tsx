@@ -1,55 +1,133 @@
 import styled from "@emotion/styled";
-import { fadeInAnimation, fadeInUpAnimation } from "@/styles/animation";
+import { fadeInUpAnimation } from "@/styles/animation";
 
 interface IntroStylesProps {
   isMobile: boolean;
 }
 
 export const AboutWrapper = styled.section<IntroStylesProps>`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  width: 100%;
-  padding: 0;
-  text-align: left;
-
-  h3 {
-    font-family: var(--font-sans);
-    font-size: ${({ isMobile }) =>
-      isMobile ? "var(--fz-xl)" : "var(--fz-heading)"};
-    font-weight: 400;
-    ${({}) => fadeInUpAnimation(0.8)}; /* Fade-in with no delay */
+  h2 {
+    ${({}) => fadeInUpAnimation(0.6)};
   }
-
-  h4 {
-    color: var(--green);
-    font-family: var(--font-mono);
-    font-size: ${({ isMobile }) =>
-      isMobile ? "var(--fz-sm)" : "var(--fz-md)"};
-    font-weight: 400;
-    ${({}) => fadeInUpAnimation(0.8)}; /* Fade-in with no delay */
+  .inner {
+    display: ${({ isMobile }) => (isMobile ? "block" : "grid")};
+    grid-template-columns: 4fr 2fr;
+    grid-gap: 30px;
   }
+`;
 
-  h1 {
-    line-height: ${({ isMobile }) => (isMobile ? "1.5" : "1.1")};
-    color: var(--lightest-slate);
-    font-size: ${({ isMobile }) => (isMobile ? "var(--fz-heading)" : "72px")};
-    font-family: var(--font-sans);
-    ${({}) => fadeInUpAnimation(1)}; /* Fade-in with 0.2s delay */
-
-    &.intro-desc {
-      line-height: ${({ isMobile }) => (isMobile ? "1" : "0.9")};
-      color: var(--slate);
-    }
-  }
-
+export const LeftSection = styled.div<IntroStylesProps>`
+  ${({}) => fadeInUpAnimation(0.8)};
   p {
-    line-height: 1.5;
     font-size: ${({ isMobile }) =>
       isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
     color: var(--slate);
-    ${({}) => fadeInUpAnimation(1.2)}; /* Fade-in with 0.6s delay */
+    font-family: var(--font-sans);
+  }
+
+  h3 {
+    font-size: ${({ isMobile }) =>
+      isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
+    color: var(--blue);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    padding-top: 10px;
+  }
+`;
+
+export const RightSection = styled.div<IntroStylesProps>`
+  ${({}) => fadeInUpAnimation(1)};
+  position: relative;
+  width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+  height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+  @media (max-width: 768px) {
+    margin: 50px auto 0;
+    width: 70%;
+  }
+
+  .wrapper {
+    width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+    height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+    font-size: ${({ isMobile }) =>
+      isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 20px 30px -15px var(--navy-shadow);
+    }
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-color: var(--green);
+
+    &:hover,
+    &:focus {
+      outline: 0;
+      transform: translate(-4px, -4px);
+
+      &:after {
+        transform: translate(8px, 8px);
+      }
+
+      .img {
+        filter: none;
+        mix-blend-mode: normal;
+      }
+    }
+
+    .img {
+      position: relative;
+      border-radius: var(--border-radius);
+      mix-blend-mode: multiply;
+      filter: grayscale(100%) contrast(1);
+      transition: var(--transition);
+      width: 100%;
+      height: 100%;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+
+    &:before {
+      top: 0;
+      left: 0;
+      background-color: var(--navy);
+      mix-blend-mode: screen;
+    }
+
+    &:after {
+      border: 2px solid var(--green);
+      top: 14px;
+      left: 14px;
+      z-index: -1;
+    }
+  }
+`;
+
+export const LanguageList = styled.div`
+  ${({}) => fadeInUpAnimation(1.2)};
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  color: var(--light-slate);
+  .separator {
+    margin: 0 6px;
+    color: var(--green);
+  }
+
+  span {
+    margin-bottom: 2px;
   }
 `;

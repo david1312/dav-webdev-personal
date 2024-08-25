@@ -2,9 +2,12 @@ import React from "react";
 import { IntroWrapper } from "./Intro.styles";
 import { useIsMobileContext } from "@/context/IsMobileContext";
 import Link from "next/link";
+import Button from "../Common/Button/Button";
+import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 const Intro: React.FC = () => {
   const { isMobile } = useIsMobileContext();
+  const handleClickSectionLink = useSmoothScroll();
 
   return (
     <IntroWrapper isMobile={isMobile}>
@@ -25,10 +28,13 @@ const Intro: React.FC = () => {
         .
       </p>
       <p>
-        Hey there!👋 Welcome to my little corner of the web. Here, you can check
-        out my projects, get to know a bit about my journey, and see what I’ve
+        Hey there!👋 Welcome to my little corner of the web. Here, you can get
+        to know a bit about my journey, check out my projects, and see what I’ve
         been up to.
       </p>
+      <Link href={"#about"} onClick={handleClickSectionLink}>
+        <Button variant="big" label="Let's Dive In" />
+      </Link>
     </IntroWrapper>
   );
 };
