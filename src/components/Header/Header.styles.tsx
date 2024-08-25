@@ -1,3 +1,4 @@
+import { fadeAnimation } from "@/styles/animation";
 import styled from "@emotion/styled";
 
 interface HeaderWrapperProps {
@@ -53,20 +54,18 @@ export const Nav = styled.nav<HeaderWrapperProps>`
     counter-increment: item 1;
     color: var(--white);
     opacity: 0; /* Start hidden */
-    transform: translateY(-20px); /* Start slightly above */
-    animation: fadeInUp 0.5s ease forwards;
 
     &:nth-of-type(1) {
-      animation-delay: 0.1s;
+      ${({}) => fadeAnimation("down", 0.1)};
     }
     &:nth-of-type(2) {
-      animation-delay: 0.3s;
+      ${({}) => fadeAnimation("down", 0.3)};
     }
     &:nth-of-type(3) {
-      animation-delay: 0.5s;
+      ${({}) => fadeAnimation("down", 0.5)};
     }
     &:nth-of-type(4) {
-      animation-delay: 0.7s;
+      ${({}) => fadeAnimation("down", 0.7)};
     }
 
     a {
@@ -86,12 +85,5 @@ export const Nav = styled.nav<HeaderWrapperProps>`
   }
   .link-btn {
     margin-left: 1rem;
-  }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 `;

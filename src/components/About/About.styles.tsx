@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { fadeInUpAnimation } from "@/styles/animation";
+import { fadeAnimation } from "@/styles/animation";
 
 interface IntroStylesProps {
   isMobile: boolean;
@@ -7,7 +7,7 @@ interface IntroStylesProps {
 
 export const AboutWrapper = styled.section<IntroStylesProps>`
   h2 {
-    ${({}) => fadeInUpAnimation(0.6)};
+    ${({}) => fadeAnimation("up", 0.6)};
   }
   .inner {
     display: ${({ isMobile }) => (isMobile ? "block" : "grid")};
@@ -17,7 +17,7 @@ export const AboutWrapper = styled.section<IntroStylesProps>`
 `;
 
 export const LeftSection = styled.div<IntroStylesProps>`
-  ${({}) => fadeInUpAnimation(0.8)};
+  ${({}) => fadeAnimation("up", 0.8)};
   p {
     font-size: ${({ isMobile }) =>
       isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
@@ -36,13 +36,13 @@ export const LeftSection = styled.div<IntroStylesProps>`
 `;
 
 export const RightSection = styled.div<IntroStylesProps>`
-  ${({}) => fadeInUpAnimation(1)};
+  ${({}) => fadeAnimation("up", 1)};
   position: relative;
   width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
   height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+
   @media (max-width: 768px) {
     margin: 50px auto 0;
-    width: 70%;
   }
 
   .wrapper {
@@ -84,8 +84,8 @@ export const RightSection = styled.div<IntroStylesProps>`
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
-      width: 100%;
-      height: 100%;
+      width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+      height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
     }
 
     &:before,
@@ -116,7 +116,7 @@ export const RightSection = styled.div<IntroStylesProps>`
 `;
 
 export const LanguageList = styled.div`
-  ${({}) => fadeInUpAnimation(1.2)};
+  ${({}) => fadeAnimation("up", 1.2)};
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-mono);

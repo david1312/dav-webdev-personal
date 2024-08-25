@@ -6,6 +6,7 @@ import { breakpoints } from "@/utils/contants";
 const GlobalStyles = () => (
   <Global
     styles={css`
+      /* Mobile first approach */
       ${variables}
 
       scroll-behavior: smooth;
@@ -28,10 +29,14 @@ const GlobalStyles = () => (
 
       main {
         @media (min-width: ${breakpoints.mobile}px) {
-          padding: 0 175px;
+          padding: 0 150px;
         }
 
-        padding: 0 25px;
+        @media (min-width: ${breakpoints.desktop}px) {
+          padding: 0 200px;
+        }
+
+        padding: 0 30px;
       }
 
       h1,
@@ -43,6 +48,56 @@ const GlobalStyles = () => (
         margin: 0;
         font-weight: 600;
         color: var(--white);
+      }
+
+      h1 {
+        font-size: var(--fz-heading);
+        line-height: 1.5;
+        color: var(--lightest-slate);
+        font-family: var(--font-sans);
+
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: 48px;
+          line-height: 1.5;
+        }
+
+        @media (min-width: ${breakpoints.desktop}px) {
+          font-size: 72px;
+          line-height: 1.1;
+        }
+
+        &.intro-desc {
+          line-height: 1;
+          color: var(--slate);
+
+          @media (min-width: ${breakpoints.mobile}px) {
+            line-height: 0.9;
+          }
+        }
+      }
+
+      h4 {
+        color: var(--green);
+        font-family: var(--font-mono);
+        font-size: var(--fz-sm);
+        font-weight: 400;
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-md);
+        }
+      }
+
+      p {
+        line-height: 1.5;
+        font-size: var(--fz-xl);
+        color: var(--slate);
+
+        @media (max-width: ${breakpoints.desktop}px) {
+          font-size: var(--fz-lg);
+          line-height: 1.5;
+        }
+        @media (max-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-md);
+        }
       }
 
       a {

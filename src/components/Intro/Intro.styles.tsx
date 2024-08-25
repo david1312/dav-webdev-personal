@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { fadeInUpAnimation } from "@/styles/animation";
+import { fadeAnimation } from "@/styles/animation";
 
 interface IntroStylesProps {
   isMobile: boolean;
@@ -16,37 +16,19 @@ export const IntroWrapper = styled.section<IntroStylesProps>`
   text-align: left;
 
   h4 {
-    color: var(--green);
-    font-family: var(--font-mono);
-    font-size: ${({ isMobile }) =>
-      isMobile ? "var(--fz-sm)" : "var(--fz-md)"};
-    font-weight: 400;
-    ${({}) => fadeInUpAnimation(0.8)};
+    ${({}) => fadeAnimation("up", 0.8)};
   }
 
   h1 {
-    line-height: ${({ isMobile }) => (isMobile ? "1.5" : "1.1")};
-    color: var(--lightest-slate);
-    font-size: ${({ isMobile }) => (isMobile ? "var(--fz-heading)" : "72px")};
-    font-family: var(--font-sans);
-    ${({}) => fadeInUpAnimation(1)};
-
-    &.intro-desc {
-      line-height: ${({ isMobile }) => (isMobile ? "1" : "0.9")};
-      color: var(--slate);
-    }
+    ${({}) => fadeAnimation("up", 1)};
   }
 
   p {
-    line-height: 1.5;
-    font-size: ${({ isMobile }) =>
-      isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
-    color: var(--slate);
-    ${({}) => fadeInUpAnimation(1.2)};
+    ${({}) => fadeAnimation("up", 1.2)};
   }
 
   button {
-    ${({}) => fadeInUpAnimation(1.4)};
+    ${({}) => fadeAnimation("up", 1.4)};
     margin: 20px 0;
   }
 `;
