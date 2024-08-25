@@ -22,9 +22,10 @@ const About: React.FC = () => {
             Hi! I’m David, and I love building apps that make life easier. My
             passion for software development began in 2017 during my university
             internship, where I created a program that replaced a local tire
-            store’s manual invoicing system. Though not too complex, solving the
-            problem and seeing the business owner’s happiness brought me
-            satisfaction. That’s when I knew this was what I wanted to do.
+            store’s manual invoicing system. Even though not too complex, being
+            able solving the problem and seeing the business owner’s happiness
+            brought me satisfaction. That’s when I knew this was what I wanted
+            to do.
           </p>
           <p>
             And since then, I’ve gained about 5 years of professional experience

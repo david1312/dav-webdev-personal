@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 
 const useSmoothScroll = () => {
-  const handleSmoothScroll = useCallback(
+  const handleClickSectionLink = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
       e.preventDefault();
       const targetId = e.currentTarget.getAttribute("href")!.slice(2);
@@ -17,7 +17,7 @@ const useSmoothScroll = () => {
     []
   );
 
-  return handleSmoothScroll;
+  return handleClickSectionLink;
 };
 
 export default useSmoothScroll;

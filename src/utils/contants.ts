@@ -8,6 +8,7 @@ interface NavLink {
   name: string;
   href: string;
 }
+
 // use less than math to calculate
 export const breakpoints: { mobile: number; tablet: number; desktop: number } =
   {
@@ -60,3 +61,5 @@ export const navLinks: NavLink[] = [
     href: "#contact",
   },
 ];
+
+export const programmingSkills: string[] = ["asd", "as"];

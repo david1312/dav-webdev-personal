@@ -12,7 +12,7 @@ const Header: React.FC = () => {
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { isMobile } = useIsMobileContext();
-  const handleSmoothScroll = useSmoothScroll();
+  const handleClickSectionLink = useSmoothScroll();
 
   useEffect(() => {
     let lastScrollTop = 0;
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
               {navLinks.map((val, index) => {
                 return (
                   <li key={index}>
-                    <Link href={val.href} onClick={handleSmoothScroll}>
+                    <Link href={val.href} onClick={handleClickSectionLink}>
                       {val.name}
                     </Link>
                   </li>

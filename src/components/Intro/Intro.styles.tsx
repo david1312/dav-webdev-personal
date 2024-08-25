@@ -21,7 +21,7 @@ export const IntroWrapper = styled.section<IntroStylesProps>`
     font-size: ${({ isMobile }) =>
       isMobile ? "var(--fz-sm)" : "var(--fz-md)"};
     font-weight: 400;
-    ${({}) => fadeInUpAnimation(0.8)}; /* Fade-in with no delay */
+    ${({}) => fadeInUpAnimation(0.8)};
   }
 
   h1 {
@@ -29,7 +29,7 @@ export const IntroWrapper = styled.section<IntroStylesProps>`
     color: var(--lightest-slate);
     font-size: ${({ isMobile }) => (isMobile ? "var(--fz-heading)" : "72px")};
     font-family: var(--font-sans);
-    ${({}) => fadeInUpAnimation(1)}; /* Fade-in with 0.2s delay */
+    ${({}) => fadeInUpAnimation(1)};
 
     &.intro-desc {
       line-height: ${({ isMobile }) => (isMobile ? "1" : "0.9")};
@@ -42,6 +42,11 @@ export const IntroWrapper = styled.section<IntroStylesProps>`
     font-size: ${({ isMobile }) =>
       isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
     color: var(--slate);
-    ${({}) => fadeInUpAnimation(1.2)}; /* Fade-in with 0.6s delay */
+    ${({}) => fadeInUpAnimation(1.2)};
+  }
+
+  button {
+    ${({}) => fadeInUpAnimation(1.4)};
+    margin: 20px 0;
   }
 `;

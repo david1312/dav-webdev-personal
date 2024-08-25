@@ -7,14 +7,10 @@ interface IntroStylesProps {
 
 export const AboutWrapper = styled.section<IntroStylesProps>`
   .inner {
-
-    display: grid;
+    display: ${({ isMobile }) => (isMobile ? "block" : "grid")};
     grid-template-columns: 4fr 2fr;
     grid-gap: 30px;
-
-    @media (max-width: 768px) {
-      display: block;
-    }
+  }
 `;
 
 export const LeftSection = styled.div<IntroStylesProps>`
@@ -36,14 +32,18 @@ export const LeftSection = styled.div<IntroStylesProps>`
 
 export const RightSection = styled.div<IntroStylesProps>`
   position: relative;
-  max-width: 300px;
-
+  width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+  height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
   @media (max-width: 768px) {
     margin: 50px auto 0;
     width: 70%;
   }
 
   .wrapper {
+    width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+    height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+    font-size: ${({ isMobile }) =>
+      isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
     box-shadow: 0 10px 30px -15px var(--navy-shadow);
     transition: var(--transition);
 
