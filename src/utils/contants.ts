@@ -62,4 +62,38 @@ export const navLinks: NavLink[] = [
   },
 ];
 
-export const programmingSkills: string[] = ["asd", "as"];
+interface TechStack {
+  title: string;
+  items: string[];
+}
+
+export const techStacks: TechStack[] = [
+  {
+    title: "Programming Languages",
+    items: ["Javascript", "Typescript", "HTML", "CSS", "Golang", "PHP"],
+  },
+  {
+    title: "Libraries & Frameworks",
+    items: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Redux",
+      "i18next",
+      "RxJS",
+      "Emotion",
+      "styled-component",
+      "Tailwind",
+      "Vue",
+      "Nuxt",
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    items: ["Git", "Vercel", "Docker", "Webpack", "S3", "Jira", "Figma"],
+  },
+  {
+    title: "Database",
+    items: ["MySql", "Postgre", "Redis", "MongoDB", "Firebase"],
+  },
+];

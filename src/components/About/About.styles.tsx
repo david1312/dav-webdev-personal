@@ -6,6 +6,9 @@ interface IntroStylesProps {
 }
 
 export const AboutWrapper = styled.section<IntroStylesProps>`
+  h2 {
+    ${({}) => fadeInUpAnimation(0.6)};
+  }
   .inner {
     display: ${({ isMobile }) => (isMobile ? "block" : "grid")};
     grid-template-columns: 4fr 2fr;
@@ -14,6 +17,7 @@ export const AboutWrapper = styled.section<IntroStylesProps>`
 `;
 
 export const LeftSection = styled.div<IntroStylesProps>`
+  ${({}) => fadeInUpAnimation(0.8)};
   p {
     font-size: ${({ isMobile }) =>
       isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
@@ -27,10 +31,12 @@ export const LeftSection = styled.div<IntroStylesProps>`
     color: var(--blue);
     font-family: var(--font-mono);
     font-weight: 600;
+    padding-top: 10px;
   }
 `;
 
 export const RightSection = styled.div<IntroStylesProps>`
+  ${({}) => fadeInUpAnimation(1)};
   position: relative;
   width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
   height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
@@ -110,12 +116,12 @@ export const RightSection = styled.div<IntroStylesProps>`
 `;
 
 export const LanguageList = styled.div`
+  ${({}) => fadeInUpAnimation(1.2)};
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-mono);
   font-size: var(--fz-sm);
   color: var(--light-slate);
-  margin-top: 10px;
   .separator {
     margin: 0 6px;
     color: var(--green);

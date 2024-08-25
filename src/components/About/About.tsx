@@ -9,13 +9,14 @@ import { useIsMobileContext } from "@/context/IsMobileContext";
 import Link from "next/link";
 import profile from "@/assets/images/profile.webp";
 import Image from "next/image";
+import { techStacks } from "@/utils/contants";
 
 const About: React.FC = () => {
   const { isMobile } = useIsMobileContext();
 
   return (
     <AboutWrapper isMobile={isMobile} id="about">
-      <h3 className="numbered-section">About Me</h3>
+      <h2 className="numbered-section">About Me</h2>
       <div className="inner">
         <LeftSection isMobile={isMobile}>
           <p>
@@ -52,25 +53,35 @@ const About: React.FC = () => {
             in a previous project.
           </p>
           <p>Here are a few of the tech stacks I enjoy working with:</p>
-          <h3>Programming Languages:</h3>
+          {/* <h3>Programming Languages:</h3>
           <LanguageList>
-            <span>JavaScript</span>
-            <span className="separator">|</span>
-            <span>TypeScript</span>
-            <span className="separator">|</span>
-            <span>HTML</span>
-            <span className="separator">|</span>
-            <span>CSS</span>
-            <span className="separator">|</span>
-            <span>Golang</span>
-            <span className="separator">|</span>
-            <span>Node.js</span>
-            <span className="separator">|</span>
-            <span>Node.js</span>
-            <span className="separator">|</span>
-            <span>Node.js</span> <span className="separator">|</span>
-            <span>Node.js</span>
-          </LanguageList>
+            {programmingSkills.map((val, index) => (
+              <React.Fragment key={index}>
+                <span>{val}</span>
+                {index < programmingSkills.length - 1 && (
+                  <span className="separator">|</span>
+                )}
+              </React.Fragment>
+            ))}
+          </LanguageList> */}
+
+          {techStacks.map((val, index) => (
+            <React.Fragment key={index}>
+              <h3>{val.title}:</h3>
+              <LanguageList>
+                {val.items.map((item, indexItem) => {
+                  return (
+                    <React.Fragment key={indexItem}>
+                      <span>{item}</span>
+                      {indexItem < val.items.length - 1 && (
+                        <span className="separator">|</span>
+                      )}
+                    </React.Fragment>
+                  );
+                })}
+              </LanguageList>
+            </React.Fragment>
+          ))}
         </LeftSection>
         <RightSection isMobile={isMobile}>
           <div className="wrapper">
