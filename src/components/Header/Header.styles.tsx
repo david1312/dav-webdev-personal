@@ -1,8 +1,8 @@
 import { fadeAnimation } from "@/styles/animation";
+import { breakpoints } from "@/utils/contants";
 import styled from "@emotion/styled";
 
 interface HeaderWrapperProps {
-  isMobile: boolean;
   isScrolled: boolean;
 }
 
@@ -17,7 +17,10 @@ export const HeaderWrapper = styled.header<HeaderWrapperProps>`
   align-items: center;
   background-color: var(--navy);
   color: var(--green);
-  padding: 0 ${({ isMobile }) => (isMobile ? "25px" : "40px")};
+  padding: 0 25px;
+  @media (min-width: ${breakpoints.mobile}px) {
+    padding: 0 40px;
+  }
   height: ${({ isScrolled }) =>
     isScrolled ? "var(--nav-scroll-height)" : "var(--nav-height)"};
   box-shadow: ${({ isScrolled }) =>
@@ -40,9 +43,12 @@ export const HeaderLogo = styled.div`
   width: 48px;
 `;
 
-export const Nav = styled.nav<HeaderWrapperProps>`
+export const Nav = styled.nav`
   ul {
-    display: ${({ isMobile }) => (isMobile ? "none" : "flex")};
+    display: none;
+    @media (min-width: ${breakpoints.mobile}px) {
+      display: flex;
+    }
     align-items: center;
     list-style: none;
     margin: 0;

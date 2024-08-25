@@ -47,7 +47,6 @@ const Header: React.FC = () => {
       <div className="blur-overlay" />
       <HeaderWrapper
         className={isScrollingDown ? "hide" : "show"}
-        isMobile={isMobile}
         isScrolled={isScrolled}
       >
         <HeaderLogo>
@@ -56,7 +55,7 @@ const Header: React.FC = () => {
         {isMobile ? (
           <Hamburger />
         ) : (
-          <Nav isMobile={isMobile} isScrolled={isScrolled}>
+          <Nav>
             <ul>
               {navLinks.map((val, index) => {
                 return (

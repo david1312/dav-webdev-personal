@@ -54,7 +54,6 @@ const GlobalStyles = () => (
         font-size: var(--fz-heading);
         line-height: 1.5;
         color: var(--lightest-slate);
-        font-family: var(--font-sans);
 
         @media (min-width: ${breakpoints.mobile}px) {
           font-size: 48px;
@@ -75,6 +74,36 @@ const GlobalStyles = () => (
           }
         }
       }
+      h3 {
+        font-size: var(--fz-md);
+        color: var(--blue);
+        font-family: var(--font-mono);
+        font-weight: 600;
+        padding-top: 10px;
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-lg);
+        }
+        @media (min-width: ${breakpoints.desktop}px) {
+          font-size: var(--fz-xl);
+        }
+      }
+
+      h4 {
+        color: var(--green);
+        font-family: var(--font-mono);
+        font-size: var(--fz-sm);
+        font-weight: 400;
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-md);
+        }
+      }
+
+      h2 {
+        font-size: var(--fz-xxl);
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-heading);
+        }
+      }
 
       h4 {
         color: var(--green);
@@ -87,16 +116,16 @@ const GlobalStyles = () => (
       }
 
       p {
-        line-height: 1.5;
-        font-size: var(--fz-xl);
+        font-size: var(--fz-md);
         color: var(--slate);
 
-        @media (max-width: ${breakpoints.desktop}px) {
+        @media (min-width: ${breakpoints.mobile}px) {
           font-size: var(--fz-lg);
           line-height: 1.5;
         }
-        @media (max-width: ${breakpoints.mobile}px) {
-          font-size: var(--fz-md);
+        @media (min-width: ${breakpoints.desktop}px) {
+          font-size: var(--fz-xl);
+          line-height: 1.5;
         }
       }
 
@@ -158,7 +187,6 @@ const GlobalStyles = () => (
         position: relative;
         margin-top: 10px;
         width: 100%;
-        font-size: clamp(26px, 5vw, var(--fz-heading));
         white-space: nowrap;
 
         &:before {
@@ -171,7 +199,7 @@ const GlobalStyles = () => (
           font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
           font-weight: 400;
 
-          @media (max-width: 480px) {
+          @media (min-width: 480px) {
             margin-bottom: -3px;
             margin-right: 5px;
           }
@@ -181,17 +209,23 @@ const GlobalStyles = () => (
           content: "";
           display: block;
           position: relative;
-          width: 300px;
+          width: 100%;
           height: 2px;
           margin-left: 20px;
           background-color: var(--lightest-navy);
 
-          @media (max-width: 1080px) {
-            width: 200px;
+          @media (min-width: ${breakpoints.mobile}px) {
+            width: 80px;
           }
-          @media (max-width: 768px) {
-            width: 100%;
+
+          @media (min-width: ${breakpoints.tablet}px) {
+            width: 180px;
           }
+
+          @media (min-width: ${breakpoints.desktop}px) {
+            width: 290px;
+          }
+
           @media (max-width: 600px) {
             margin-left: 10px;
           }

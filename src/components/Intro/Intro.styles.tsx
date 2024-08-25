@@ -1,11 +1,7 @@
 import styled from "@emotion/styled";
 import { fadeAnimation } from "@/styles/animation";
 
-interface IntroStylesProps {
-  isMobile: boolean;
-}
-
-export const IntroWrapper = styled.section<IntroStylesProps>`
+export const IntroWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
