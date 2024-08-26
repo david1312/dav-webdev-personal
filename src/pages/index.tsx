@@ -1,5 +1,6 @@
-import About from "@/components/About/About";
-import Intro from "@/components/Intro/Intro";
+import About from "@/components/Section/About/About";
+import Experience from "@/components/Section/Experience/Experience";
+import Intro from "@/components/Section/Intro/Intro";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
     <main>
       <Intro />
       <About />
+      <Experience />
     </main>
   );
 }

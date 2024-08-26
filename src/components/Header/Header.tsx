@@ -50,7 +50,7 @@ const Header: React.FC = () => {
         isScrolled={isScrolled}
       >
         <HeaderLogo>
-          <Logo />
+          <Logo isLoader={false} />
         </HeaderLogo>
         {isMobile ? (
           <Hamburger />
@@ -68,7 +68,7 @@ const Header: React.FC = () => {
               })}
 
               <a
-                href="/DavidBernadi-Resume.pdf"
+                href="/David_Bernadi-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-btn"

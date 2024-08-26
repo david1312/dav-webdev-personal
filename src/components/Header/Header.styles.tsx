@@ -78,15 +78,15 @@ export const Nav = styled.nav`
       &:hover {
         color: var(--green);
       }
-    }
 
-    &:before {
-      content: "0" counter(item) ".";
-      display: inline-block;
-      width: 30px;
-      margin-bottom: 5px;
-      color: var(--green);
-      font-size: var(--fz-sm);
+      &:before {
+        content: "0" counter(item) ".";
+        display: inline-block;
+        width: 30px;
+        margin-bottom: 5px;
+        color: var(--green);
+        font-size: var(--fz-sm);
+      }
     }
   }
   .link-btn {

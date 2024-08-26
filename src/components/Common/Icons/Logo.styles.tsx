@@ -8,8 +8,12 @@ export const svgStyles = css`
   fill: none;
 `;
 
-export const textStyles = css`
-  opacity: 1;
+interface TextStylesProps {
+  isLoader: boolean;
+}
+
+export const textStyles = ({ isLoader }: TextStylesProps) => css`
+  opacity: ${isLoader ? 0 : 1};
   fill: #64ffda;
   font-family: system-ui, Calibre-Medium, Calibre, sans-serif;
   font-size: 50px;

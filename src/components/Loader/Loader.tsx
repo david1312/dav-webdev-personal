@@ -43,7 +43,7 @@ const Loader: React.FC<LoaderProps> = ({ finishLoading }) => {
   return (
     <Container>
       <ContainerContent>
-        <Logo />
+        <Logo isLoader={true} />
       </ContainerContent>
     </Container>
   );

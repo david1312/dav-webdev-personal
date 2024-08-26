@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  AboutWrapper,
+  AboutSectionWrapper,
   LanguageList,
   LeftSection,
   RightSection,
@@ -12,7 +12,7 @@ import { techStacks } from "@/utils/contants";
 
 const About: React.FC = () => {
   return (
-    <AboutWrapper id="about">
+    <AboutSectionWrapper id="about">
       <h2 className="numbered-section">About Me</h2>
       <div className="inner">
         <LeftSection>
@@ -92,7 +92,7 @@ const About: React.FC = () => {
           </div>
         </RightSection>
       </div>
-    </AboutWrapper>
+    </AboutSectionWrapper>
   );
 };
 

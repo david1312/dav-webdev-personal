@@ -23,14 +23,41 @@ const fadeInDown = keyframes`
   }
 `;
 
+const fadeInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const fadeInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 // Create a map of animations
 const animationsMap = {
   up: fadeInUp,
   down: fadeInDown,
+  left: fadeInLeft,
+  right: fadeInRight,
 };
 
 // Create a function to apply the animation with a delay
-export const fadeAnimation = (direction: "up" | "down", delay = 0) => css`
+export const fadeAnimation = (
+  direction: "up" | "down" | "left" | "right",
+  delay = 0
+) => css`
   opacity: 0;
   animation: ${animationsMap[direction]} 0.5s ease forwards;
   animation-delay: ${delay}s;

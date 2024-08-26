@@ -28,6 +28,8 @@ const GlobalStyles = () => (
       }
 
       main {
+        counter-reset: section;
+
         @media (min-width: ${breakpoints.mobile}px) {
           padding: 0 150px;
         }
@@ -74,34 +76,24 @@ const GlobalStyles = () => (
           }
         }
       }
-      h3 {
-        font-size: var(--fz-md);
-        color: var(--blue);
-        font-family: var(--font-mono);
-        font-weight: 600;
-        padding-top: 10px;
-        @media (min-width: ${breakpoints.mobile}px) {
-          font-size: var(--fz-lg);
-        }
-        @media (min-width: ${breakpoints.desktop}px) {
-          font-size: var(--fz-xl);
-        }
-      }
-
-      h4 {
-        color: var(--green);
-        font-family: var(--font-mono);
-        font-size: var(--fz-sm);
-        font-weight: 400;
-        @media (min-width: ${breakpoints.mobile}px) {
-          font-size: var(--fz-md);
-        }
-      }
 
       h2 {
         font-size: var(--fz-xxl);
         @media (min-width: ${breakpoints.mobile}px) {
           font-size: var(--fz-heading);
+        }
+      }
+
+      h3 {
+        font-size: var(--fz-md);
+        color: var(--blue);
+        font-family: var(--font-mono);
+        font-weight: 600;
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-lg);
+        }
+        @media (min-width: ${breakpoints.desktop}px) {
+          font-size: var(--fz-xl);
         }
       }
 
@@ -132,6 +124,10 @@ const GlobalStyles = () => (
       a {
         text-decoration: none;
         color: inherit;
+      }
+
+      section {
+        padding: 80px 0px;
       }
 
       ul,
@@ -185,7 +181,7 @@ const GlobalStyles = () => (
         display: flex;
         align-items: center;
         position: relative;
-        margin-top: 10px;
+        margin: 10px 0 40px;
         width: 100%;
         white-space: nowrap;
 
@@ -213,7 +209,7 @@ const GlobalStyles = () => (
           height: 2px;
           margin-left: 20px;
           background-color: var(--lightest-navy);
-
+          top: 3px;
           @media (min-width: ${breakpoints.mobile}px) {
             width: 80px;
           }

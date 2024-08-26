@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Software Engineer",
+    "company": "OCBC Indonesia",
+    "companyAlias": "OCBC Indonesia",
+    "url": "https://www.ocbc.id/en",
+    "range": "July 2021 - Present",
+    "responsibilities": [
+      "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
+      "Developed an offline mode feature for customer onboarding, enabling multiple draft submissions to be saved and the process to continue seamlessly without internet.",
+      "Accelerated the KYC process by 87%, cutting average time from 2 minutes to 15 seconds, by replacing VKYC with Face Recognition and Liveness Check.",
+      "Transformed Figma designs into web components, crafting a seamless and visually appealing user experience.",
+      "Developed a CMS with Strapi, centralizing asset management to reduce duplication and S3 costs, and increasing efficiency with auto content updates across all platforms.",
+      "Collaborated with cross-functional teams to transform business requirements and ideas into high-quality products using Scrum.",
+      "Integrated Sentry for real-time error tracking and web performance monitoring, enhancing reliability with immediate alerts and detailed reports.",
+      "Implemented unit testing and end-to-end testing primarily using Jest and Cypress."
+    ]
+  },
+  {
+    "title": "Associate S.E. (Banking Academy - IT Program)",
+    "company": "OCBC Indonesia (BA-IT Prog.)",
+    "companyAlias": "OCBC Indonesia",
+    "url": "https://drive.google.com/file/d/1fM76hIRu1xaAs0v52xnFXrUyNgawz5J3/view?usp=drive_link",
+    "range": "July 2020 - June 2020",
+    "responsibilities": [
+      "Developed a self-service onboarding web app using React and TypeScript, enabling customers to seamlessly apply for bank products independently.",
+      "Developed 'One Notification' web app using React and Go, centralizing and monitoring notifications (email, SMS, WhatsApp, push) across platforms in real-time.",
+      "Cached frequently accessed REST API data using Redis, improving average response time by 90%, from approximately 150ms to 15ms after caching."
+    ]
+  },
+  {
+    "title": "Full-Stack Developer",
+    "company": "Terra ID",
+    "companyAlias": "Terra ID",
+    "url": "https://terra-id.com/",
+    "range": "November 2018 - June 2020",
+    "responsibilities": [
+      "Developed an Android app for a GPS-based tractor rental system, utilizing PHP for the backend and PhoneGap for the user interface.",
+      "Integrated a third-party GPS service to monitor tractor usage and provide service reminders, ensuring precise cost calculation and usage limits.",
+      "Provided direct training to farmers and tractor owners on how to use the app."
+    ]
+  },
+  {
+    "title": "Software Engineer Internship",
+    "company": "Mandira Mekar Agung",
+    "companyAlias": "Mandira Mekar Agung Ltd.",
+    "url": "https://maps.app.goo.gl/dGUjrrNz63NYQhgG7",
+    "range": "November 2018 - June 2020",
+    "responsibilities": [
+      "Developed a transaction management program for a local tire store using Java for the backend and NetBeans IDE for the user interface.",
+      "Improved transaction processing efficiency and transparency by converting the store's manual billing system into a digital receipt system."
+    ]
+  }
+]

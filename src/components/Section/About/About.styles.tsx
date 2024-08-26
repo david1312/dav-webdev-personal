@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import { fadeAnimation } from "@/styles/animation";
 import { breakpoints } from "@/utils/contants";
 
-export const AboutWrapper = styled.section`
+export const AboutSectionWrapper = styled.section`
   h2 {
-    ${({}) => fadeAnimation("up", 0.8)};
+    ${({}) => fadeAnimation("up", 0.4)};
   }
   .inner {
     display: block;
@@ -19,15 +19,15 @@ export const AboutWrapper = styled.section`
 
 export const LeftSection = styled.div`
   p {
-    ${({}) => fadeAnimation("up", 1)};
+    ${({}) => fadeAnimation("up", 0.6)};
   }
   h3 {
-    ${({}) => fadeAnimation("up", 1.2)};
+    ${({}) => fadeAnimation("up", 0.8)};
   }
 `;
 
 export const RightSection = styled.div`
-  ${({}) => fadeAnimation("up", 1)};
+  ${({}) => fadeAnimation("up", 0.6)};
   position: relative;
   width: 227.5px;
   height: 227.5px;
@@ -133,7 +133,7 @@ export const RightSection = styled.div`
 `;
 
 export const LanguageList = styled.div`
-  ${({}) => fadeAnimation("up", 1.2)};
+  ${({}) => fadeAnimation("up", 0.8)};
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-mono);

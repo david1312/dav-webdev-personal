@@ -1,7 +1,6 @@
-import React from "react";
 import { IntroWrapper } from "./Intro.styles";
 import Link from "next/link";
-import Button from "../Common/Button/Button";
+import Button from "@/components/Common/Button/Button";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
 
 const Intro: React.FC = () => {
