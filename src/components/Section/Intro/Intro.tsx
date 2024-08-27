@@ -2,10 +2,11 @@ import { IntroWrapper } from "./Intro.styles";
 import Link from "next/link";
 import Button from "@/components/Common/Button/Button";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
+import { useIsMobileContext } from "@/context/IsMobileContext";
 
 const Intro: React.FC = () => {
   const handleClickSectionLink = useSmoothScroll();
-
+  const { isMobile } = useIsMobileContext();
   return (
     <IntroWrapper>
       <h4>Hello, My name is</h4>
@@ -30,7 +31,7 @@ const Intro: React.FC = () => {
         been up to.
       </p>
       <Link href={"#about"} onClick={handleClickSectionLink}>
-        <Button variant="big" label="Let's Dive In" />
+        <Button variant={isMobile ? "small" : "big"} label="Let's Dive In" />
       </Link>
     </IntroWrapper>
   );

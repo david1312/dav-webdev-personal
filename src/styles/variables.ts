@@ -28,6 +28,7 @@ const variables = css`
     --fz-lg: 18px;
     --fz-xl: 20px;
     --fz-xxl: 22px;
+    --fz-heading-small: 24px;
     --fz-heading: 32px;
 
     --border-radius: 4px;

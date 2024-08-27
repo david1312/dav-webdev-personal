@@ -10,12 +10,19 @@ interface NavLink {
 }
 
 // use less than math to calculate
-export const breakpoints: { mobile: number; tablet: number; desktop: number } =
-  {
-    mobile: 769,
-    tablet: 1025,
-    desktop: 1201,
-  };
+interface Breakpoints {
+  smallDevice: number;
+  mobile: number;
+  tablet: number;
+  desktop: number;
+}
+
+export const breakpoints: Readonly<Breakpoints> = {
+  smallDevice: 481,
+  mobile: 769,
+  tablet: 1025,
+  desktop: 1201,
+};
 
 export const defaultMetadata: { title: string; description: string } = {
   title: "David Bernadi | Software Engineer & Frontend Enthusiast",

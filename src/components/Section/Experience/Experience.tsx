@@ -4,7 +4,6 @@ import {
   TabList,
   TabButton,
   TabContent,
-  CompanyLink,
   ResponsibilityList,
   ResponsibilityItem,
 } from "./Experience.styles";
@@ -52,14 +51,14 @@ const ExperienceSection: React.FC = () => {
         <TabContent key={activeTab}>
           <h3>
             {experiences[activeTab].title} @{" "}
-            <CompanyLink
+            <Link
               href={experiences[activeTab].url}
               target="_blank"
               rel="noopener noreferrer"
               className="underline-animation"
             >
               {experiences[activeTab].companyAlias}
-            </CompanyLink>
+            </Link>
           </h3>
           <p>{experiences[activeTab].range}</p>
           <ResponsibilityList>

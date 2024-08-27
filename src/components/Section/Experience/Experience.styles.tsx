@@ -8,11 +8,11 @@ export const ExperienceWrapper = styled.section`
   max-width: 960px;
   .inner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex: 1;
 
-    @media (min-width: ${breakpoints.mobile}) {
-      flex-direction: column;
+    @media (min-width: ${breakpoints.tablet}px) {
+      flex-direction: row;
     }
   }
 `;
@@ -22,44 +22,56 @@ export const TabList = styled.div`
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  border-bottom: 2px solid #333;
   margin-bottom: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.tablet}px) {
     flex-direction: column;
-
+    overflow-x: visible;
     border-bottom: none;
     margin-bottom: 0;
-    overflow-x: visible;
   }
 `;
 
 export const TabButton = styled.button<{ isActive: boolean }>`
-  padding: 15px;
-  text-align: left;
+  font-family: var(--font-mono);
+  font-size: var(--fz-xs);
+  padding: 15px 5px 15px 10px;
+  text-align: center;
   border: none;
-  border-left: 2px solid var(--lightest-navy);
-  background: ${(props) => (props.isActive ? "#1c1c1c" : "transparent")};
-  color: ${(props) => (props.isActive ? "var(--green)" : "#fff")};
+  background: transparent;
+  color: ${(props) => (props.isActive ? "var(--green)" : "var(--slate)")};
   cursor: pointer;
-  transition: background 0.5s, color 0.5s,
-    border-left 0.25s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.3s;
+  transition: var(--transition), background 0.5s, color 0.5s, border-left 0.25s;
   white-space: nowrap;
   transform: ${(props) =>
-    props.isActive ? "translateX(2px)" : "translateX(0)"};
+    props.isActive ? "translateY(0)" : "translateY(-2px)"};
 
-  &:hover {
-    background: #333;
-  }
+  border-bottom: 2px solid var(--lightest-navy);
 
   ${(props) =>
     props.isActive &&
     `
-    border-left-color: #4ca3ff;
+    border-bottom-color: var(--green);
   `}
 
-  @media (min-width: 768px) {
+  &:hover,
+  &:focus {
+    color: var(--green);
+    background-color: var(--light-navy);
+  }
+
+  @media (min-width: ${breakpoints.tablet}px) {
     text-align: left;
+    transform: ${(props) =>
+      props.isActive ? "translateX(2px)" : "translateX(0)"};
+    border-bottom: none;
+    border-left: 2px solid var(--lightest-navy);
+
+    ${(props) =>
+      props.isActive &&
+      `
+      border-left-color: var(--green);
+    `}
   }
 `;
 
@@ -70,19 +82,38 @@ interface TabContentProps {
 export const TabContent = styled.div<TabContentProps>`
   ${({ key }) => fadeAnimation("left", 0.1)};
   color: var(--light-slate);
+  h3 {
+    font-family: var(--font-sans);
+    font-size: var(--fz-lg);
+    color: var(--lightest-slate);
+    @media (min-width: ${breakpoints.mobile}px) {
+      font-size: var(--fz-xl);
+    }
+    @media (min-width: ${breakpoints.tablet}px) {
+      font-size: var(--fz-xxl);
+    }
+  }
 
+  p {
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    @media (min-width: ${breakpoints.mobile}px) {
+      font-size: var(--fz-sm);
+    }
+  }
+  li {
+    font-family: var(--font-sans);
+    font-size: var(--fz-sm);
+    @media (min-width: ${breakpoints.mobile}px) {
+      font-size: var(--fz-md);
+    }
+    @media (min-width: ${breakpoints.tablet}px) {
+      font-size: var(--fz-lg);
+    }
+  }
   flex: 3;
   padding: 0 20px 20px 20px;
   color: #fff;
-`;
-
-export const CompanyLink = styled.a`
-  color: #4ca3ff;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 export const ResponsibilityList = styled.ul`
@@ -96,7 +127,7 @@ export const ResponsibilityItem = styled.li`
 
   &::before {
     content: "▹";
-    color: #4ca3ff;
+    color: var(--green);
     padding-right: 5px;
   }
 `;

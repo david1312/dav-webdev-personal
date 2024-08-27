@@ -67,14 +67,14 @@ const Header: React.FC = () => {
                 );
               })}
 
-              <a
+              <Link
                 href="/David_Bernadi-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-btn"
               >
                 <Button label="Resume" variant="small" />
-              </a>
+              </Link>
             </ul>
           </Nav>
         )}

@@ -53,9 +53,14 @@ const GlobalStyles = () => (
       }
 
       h1 {
-        font-size: var(--fz-heading);
-        line-height: 1.5;
+        font-size: var(--fz-heading-small);
+        line-height: 1.2;
         color: var(--lightest-slate);
+
+        @media (min-width: ${breakpoints.smallDevice}px) {
+          font-size: var(--fz-heading);
+          line-height: 1.5;
+        }
 
         @media (min-width: ${breakpoints.mobile}px) {
           font-size: 48px;
@@ -108,8 +113,13 @@ const GlobalStyles = () => (
       }
 
       p {
-        font-size: var(--fz-md);
+        font-size: var(--fz-sm);
         color: var(--slate);
+
+        @media (min-width: ${breakpoints.smallDevice}px) {
+          font-size: var(--fz-md);
+          line-height: 1.5;
+        }
 
         @media (min-width: ${breakpoints.mobile}px) {
           font-size: var(--fz-lg);
@@ -161,20 +171,24 @@ const GlobalStyles = () => (
         position: relative;
         color: var(--green);
         text-decoration: none;
+        display: inline-block; /* Ensures the element takes up only the width of the text */
 
         &::after {
           content: "";
           position: absolute;
           left: 0;
           bottom: 0;
-          width: 0;
+          width: 100%; /* Ensure the line spans the entire width of the text */
           height: 1px;
           background-color: var(--green);
-          transition: width 0.3s var(--easing);
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.3s var(--easing);
         }
 
         &:hover::after {
-          width: 100%;
+          transform: scaleX(1);
+          transform-origin: bottom left;
         }
       }
       .numbered-section {
