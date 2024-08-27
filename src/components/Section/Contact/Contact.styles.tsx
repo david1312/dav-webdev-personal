@@ -9,10 +9,11 @@ export const ContactWrapper = styled.section`
   text-align: center;
 
   @media (min-width: ${breakpoints.mobile}px) {
-    margin: 0 auto 100px;
+    margin: 0 auto 90px;
   }
 
   .overline {
+    ${({}) => fadeAnimation("down", 0.7)};
     display: block;
     margin-bottom: 20px;
     color: var(--green);
@@ -31,11 +32,16 @@ export const ContactWrapper = styled.section`
   }
 
   .title {
+    ${({}) => fadeAnimation("right", 0.9)};
     font-size: clamp(40px, 5vw, 60px);
     line-height: 1;
+  }
+  p {
+    ${({}) => fadeAnimation("left", 1.1)};
   }
 `;
 
 export const EmailButton = styled.div`
+  ${({}) => fadeAnimation("up", 1.3)};
   margin-top: 50px;
 `;

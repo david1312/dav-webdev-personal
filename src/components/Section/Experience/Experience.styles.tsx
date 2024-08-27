@@ -3,7 +3,7 @@ import { fadeAnimation } from "@/styles/animation";
 import { breakpoints } from "@/utils/contants";
 
 export const ExperienceWrapper = styled.section`
-  ${({}) => fadeAnimation("down", 0.8)};
+  ${({}) => fadeAnimation("up", 0.8)};
   margin: 0px auto;
   max-width: 960px;
   .inner {
@@ -18,7 +18,7 @@ export const ExperienceWrapper = styled.section`
 `;
 
 export const TabList = styled.div`
-  ${({}) => fadeAnimation("down", 1)};
+  ${({}) => fadeAnimation("up", 1)};
   display: flex;
   flex-direction: row;
   overflow-x: auto;

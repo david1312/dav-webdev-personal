@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Web Onboarding",
+    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
+    "github": "https://www.ocbc.id/en",
+    "url": "https://www.ocbc.id/en",
+    "stacks": ["Next.js", "React", "asd"]
+  },
+  {
+    "title": "Personal Web",
+    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
+    "github": "https://www.ocbc.id/en",
+    "url": "https://www.ocbc.id/en",
+    "stacks": ["Next.js", "React", "asd"]
+  },
+  {
+    "title": "Company Profile",
+    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
+    "github": "https://www.ocbc.id/en",
+    "url": "https://www.ocbc.id/en",
+    "stacks": ["Next.js", "React", "asd"]
+  },
+  {
+    "title": "Movie Catalogue using NUXT",
+    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
+    "github": "https://www.ocbc.id/en",
+    "url": "https://www.ocbc.id/en",
+    "stacks": ["Next.js", "React", "asd"]
+  },
+  {
+    "title": "Golang Rest API",
+    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
+    "github": "https://www.ocbc.id/en",
+    "url": "https://www.ocbc.id/en",
+    "stacks": ["Next.js", "React", "asd"]
+  },
+  {
+    "title": "Terra Smart Tracker",
+    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
+    "github": "https://www.ocbc.id/en",
+    "url": "https://play.google.com/store/apps/details?id=tracker.gps_terra.id",
+    "stacks": ["Next.js", "React", "asd"]
+  }
+]
