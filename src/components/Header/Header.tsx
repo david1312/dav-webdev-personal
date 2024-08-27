@@ -47,16 +47,15 @@ const Header: React.FC = () => {
       <div className="blur-overlay" />
       <HeaderWrapper
         className={isScrollingDown ? "hide" : "show"}
-        isMobile={isMobile}
         isScrolled={isScrolled}
       >
         <HeaderLogo>
-          <Logo />
+          <Logo isLoader={false} />
         </HeaderLogo>
         {isMobile ? (
           <Hamburger />
         ) : (
-          <Nav isMobile={isMobile} isScrolled={isScrolled}>
+          <Nav>
             <ul>
               {navLinks.map((val, index) => {
                 return (
@@ -68,14 +67,14 @@ const Header: React.FC = () => {
                 );
               })}
 
-              <a
-                href="/resume.pdf"
+              <Link
+                href="/David_Bernadi-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-btn"
               >
                 <Button label="Resume" variant="small" />
-              </a>
+              </Link>
             </ul>
           </Nav>
         )}

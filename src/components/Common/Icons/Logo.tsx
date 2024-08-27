@@ -1,7 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { svgStyles, textStyles } from "./Logo.styles"; // Adjust the import path as necessary
 
-const Logo: React.FC = () => {
+interface LogoProps {
+  isLoader: boolean;
+}
+const Logo: React.FC<LogoProps> = ({ isLoader }) => {
   return (
     <svg
       id="logo"
@@ -10,7 +13,7 @@ const Logo: React.FC = () => {
       css={svgStyles}
     >
       <g>
-        <g id="D" transform="translate(36, 33)" css={textStyles}>
+        <g id="D" transform="translate(36, 33)" css={textStyles({ isLoader })}>
           <text>
             <tspan x="-1" y="34">
               D

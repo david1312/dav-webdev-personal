@@ -1,7 +1,8 @@
+import { fadeAnimation } from "@/styles/animation";
+import { breakpoints } from "@/utils/contants";
 import styled from "@emotion/styled";
 
 interface HeaderWrapperProps {
-  isMobile: boolean;
   isScrolled: boolean;
 }
 
@@ -16,7 +17,10 @@ export const HeaderWrapper = styled.header<HeaderWrapperProps>`
   align-items: center;
   background-color: var(--navy);
   color: var(--green);
-  padding: 0 ${({ isMobile }) => (isMobile ? "25px" : "40px")};
+  padding: 0 25px;
+  @media (min-width: ${breakpoints.mobile}px) {
+    padding: 0 40px;
+  }
   height: ${({ isScrolled }) =>
     isScrolled ? "var(--nav-scroll-height)" : "var(--nav-height)"};
   box-shadow: ${({ isScrolled }) =>
@@ -39,9 +43,12 @@ export const HeaderLogo = styled.div`
   width: 48px;
 `;
 
-export const Nav = styled.nav<HeaderWrapperProps>`
+export const Nav = styled.nav`
   ul {
-    display: ${({ isMobile }) => (isMobile ? "none" : "flex")};
+    display: none;
+    @media (min-width: ${breakpoints.mobile}px) {
+      display: flex;
+    }
     align-items: center;
     list-style: none;
     margin: 0;
@@ -53,45 +60,36 @@ export const Nav = styled.nav<HeaderWrapperProps>`
     counter-increment: item 1;
     color: var(--white);
     opacity: 0; /* Start hidden */
-    transform: translateY(-20px); /* Start slightly above */
-    animation: fadeInUp 0.5s ease forwards;
 
     &:nth-of-type(1) {
-      animation-delay: 0.1s;
+      ${({}) => fadeAnimation("down", 0.1)};
     }
     &:nth-of-type(2) {
-      animation-delay: 0.3s;
+      ${({}) => fadeAnimation("down", 0.3)};
     }
     &:nth-of-type(3) {
-      animation-delay: 0.5s;
+      ${({}) => fadeAnimation("down", 0.5)};
     }
     &:nth-of-type(4) {
-      animation-delay: 0.7s;
+      ${({}) => fadeAnimation("down", 0.7)};
     }
 
     a {
       &:hover {
         color: var(--green);
       }
-    }
 
-    &:before {
-      content: "0" counter(item) ".";
-      display: inline-block;
-      width: 30px;
-      margin-bottom: 5px;
-      color: var(--green);
-      font-size: var(--fz-sm);
+      &:before {
+        content: "0" counter(item) ".";
+        display: inline-block;
+        width: 30px;
+        margin-bottom: 5px;
+        color: var(--green);
+        font-size: var(--fz-sm);
+      }
     }
   }
   .link-btn {
     margin-left: 1rem;
-  }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 `;

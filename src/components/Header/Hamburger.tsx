@@ -8,7 +8,7 @@ import useSmoothScroll from "@/hooks/useSmoothScroll";
 const Hamburger: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
-  const handleSmoothScroll = useSmoothScroll();
+  const handleClickSectionLink = useSmoothScroll();
 
   useEffect(() => {
     const body = document.body;
@@ -48,7 +48,7 @@ const Hamburger: React.FC = () => {
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     setIsOpen(false);
-    handleSmoothScroll(e);
+    handleClickSectionLink(e);
   };
 
   return (

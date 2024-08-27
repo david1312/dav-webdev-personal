@@ -1,15 +1,19 @@
+import { breakpoints } from "@/utils/contants";
 import styled from "@emotion/styled";
 
 export const SideWrapper = styled.div<{
   position: "left" | "right";
-  isMobile: boolean;
 }>`
   width: 40px;
   position: fixed;
   bottom: 0;
   left: ${({ position }) => (position === "left" ? "40px" : "auto")};
   right: ${({ position }) => (position === "right" ? "40px" : "auto")};
-  display: ${({ isMobile }) => (isMobile ? "none" : "flex")};
+  display: none;
+
+  @media (min-width: ${breakpoints.mobile}px) {
+    display: flex;
+  }
   flex-direction: column;
   align-items: center;
   list-style: none;

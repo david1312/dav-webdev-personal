@@ -1,19 +1,17 @@
-import React from "react";
 import { IntroWrapper } from "./Intro.styles";
-import { useIsMobileContext } from "@/context/IsMobileContext";
 import Link from "next/link";
-import Button from "../Common/Button/Button";
+import Button from "@/components/Common/Button/Button";
 import useSmoothScroll from "@/hooks/useSmoothScroll";
+import { useIsMobileContext } from "@/context/IsMobileContext";
 
 const Intro: React.FC = () => {
-  const { isMobile } = useIsMobileContext();
   const handleClickSectionLink = useSmoothScroll();
-
+  const { isMobile } = useIsMobileContext();
   return (
-    <IntroWrapper isMobile={isMobile}>
+    <IntroWrapper>
       <h4>Hello, My name is</h4>
       <h1>David Bernadi.</h1>
-      <h1 className="intro-desc">Bringing digital ideas to life.</h1>
+      <h1 className="intro-desc">I build digital ideas into reality.</h1>
       <p>
         Experienced software engineer and frontend enthusiast, dedicated to
         crafting accessible, high-quality digital experiences. Currently working
@@ -33,7 +31,7 @@ const Intro: React.FC = () => {
         been up to.
       </p>
       <Link href={"#about"} onClick={handleClickSectionLink}>
-        <Button variant="big" label="Let's Dive In" />
+        <Button variant={isMobile ? "small" : "big"} label="Let's Dive In" />
       </Link>
     </IntroWrapper>
   );

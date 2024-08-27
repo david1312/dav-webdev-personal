@@ -1,55 +1,63 @@
 import styled from "@emotion/styled";
-import { fadeInUpAnimation } from "@/styles/animation";
+import { fadeAnimation } from "@/styles/animation";
+import { breakpoints } from "@/utils/contants";
 
-interface IntroStylesProps {
-  isMobile: boolean;
-}
-
-export const AboutWrapper = styled.section<IntroStylesProps>`
+export const AboutSectionWrapper = styled.section`
   h2 {
-    ${({}) => fadeInUpAnimation(0.6)};
+    ${({}) => fadeAnimation("up", 0.4)};
   }
   .inner {
-    display: ${({ isMobile }) => (isMobile ? "block" : "grid")};
-    grid-template-columns: 4fr 2fr;
+    display: block;
+    grid-template-columns: 3fr 1fr;
     grid-gap: 30px;
+
+    @media (min-width: ${breakpoints.mobile}px) {
+      display: grid;
+    }
   }
 `;
 
-export const LeftSection = styled.div<IntroStylesProps>`
-  ${({}) => fadeInUpAnimation(0.8)};
+export const LeftSection = styled.div`
   p {
-    font-size: ${({ isMobile }) =>
-      isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
-    color: var(--slate);
-    font-family: var(--font-sans);
+    ${({}) => fadeAnimation("up", 0.6)};
   }
-
   h3 {
-    font-size: ${({ isMobile }) =>
-      isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
-    color: var(--blue);
-    font-family: var(--font-mono);
-    font-weight: 600;
-    padding-top: 10px;
+    ${({}) => fadeAnimation("up", 0.8)};
   }
 `;
 
-export const RightSection = styled.div<IntroStylesProps>`
-  ${({}) => fadeInUpAnimation(1)};
+export const RightSection = styled.div`
+  ${({}) => fadeAnimation("up", 0.6)};
   position: relative;
-  width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
-  height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
+  width: 227.5px;
+  height: 227.5px;
+
+  @media (min-width: ${breakpoints.mobile}px) {
+    width: 200px;
+    height: 200px;
+  }
+  @media (min-width: ${breakpoints.tablet}px) {
+    width: 300px;
+    height: 300px;
+  }
+
   @media (max-width: 768px) {
     margin: 50px auto 0;
-    width: 70%;
   }
 
   .wrapper {
-    width: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
-    height: ${({ isMobile }) => (isMobile ? "227.5px" : "300px")};
-    font-size: ${({ isMobile }) =>
-      isMobile ? "var(--fz-md)" : "var(--fz-xl)"};
+    width: 227.5px;
+    height: 227.5px;
+
+    @media (min-width: ${breakpoints.mobile}px) {
+      width: 200px;
+      height: 200px;
+    }
+    @media (min-width: ${breakpoints.tablet}px) {
+      width: 300px;
+      height: 300px;
+    }
+
     box-shadow: 0 10px 30px -15px var(--navy-shadow);
     transition: var(--transition);
 
@@ -84,8 +92,17 @@ export const RightSection = styled.div<IntroStylesProps>`
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
-      width: 100%;
-      height: 100%;
+      width: 227.5px;
+      height: 227.5px;
+
+      @media (min-width: ${breakpoints.mobile}px) {
+        width: 200px;
+        height: 200px;
+      }
+      @media (min-width: ${breakpoints.tablet}px) {
+        width: 300px;
+        height: 300px;
+      }
     }
 
     &:before,
@@ -116,7 +133,7 @@ export const RightSection = styled.div<IntroStylesProps>`
 `;
 
 export const LanguageList = styled.div`
-  ${({}) => fadeInUpAnimation(1.2)};
+  ${({}) => fadeAnimation("up", 0.8)};
   display: flex;
   flex-wrap: wrap;
   font-family: var(--font-mono);

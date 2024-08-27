@@ -6,6 +6,7 @@ import { breakpoints } from "@/utils/contants";
 const GlobalStyles = () => (
   <Global
     styles={css`
+      /* Mobile first approach */
       ${variables}
 
       scroll-behavior: smooth;
@@ -27,11 +28,17 @@ const GlobalStyles = () => (
       }
 
       main {
+        counter-reset: section;
+
         @media (min-width: ${breakpoints.mobile}px) {
-          padding: 0 175px;
+          padding: 0 150px;
         }
 
-        padding: 0 25px;
+        @media (min-width: ${breakpoints.desktop}px) {
+          padding: 0 200px;
+        }
+
+        padding: 0 30px;
       }
 
       h1,
@@ -45,9 +52,92 @@ const GlobalStyles = () => (
         color: var(--white);
       }
 
+      h1 {
+        font-size: var(--fz-heading-small);
+        line-height: 1.2;
+        color: var(--lightest-slate);
+
+        @media (min-width: ${breakpoints.smallDevice}px) {
+          font-size: var(--fz-heading);
+          line-height: 1.5;
+        }
+
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: 48px;
+          line-height: 1.5;
+        }
+
+        @media (min-width: ${breakpoints.desktop}px) {
+          font-size: 72px;
+          line-height: 1.1;
+        }
+
+        &.intro-desc {
+          line-height: 1;
+          color: var(--slate);
+
+          @media (min-width: ${breakpoints.mobile}px) {
+            line-height: 0.9;
+          }
+        }
+      }
+
+      h2 {
+        font-size: var(--fz-xxl);
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-heading);
+        }
+      }
+
+      h3 {
+        font-size: var(--fz-md);
+        color: var(--blue);
+        font-family: var(--font-mono);
+        font-weight: 600;
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-lg);
+        }
+        @media (min-width: ${breakpoints.desktop}px) {
+          font-size: var(--fz-xl);
+        }
+      }
+
+      h4 {
+        color: var(--green);
+        font-family: var(--font-mono);
+        font-size: var(--fz-sm);
+        font-weight: 400;
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-md);
+        }
+      }
+
+      p {
+        font-size: var(--fz-sm);
+        color: var(--slate);
+
+        @media (min-width: ${breakpoints.smallDevice}px) {
+          font-size: var(--fz-md);
+          line-height: 1.5;
+        }
+
+        @media (min-width: ${breakpoints.mobile}px) {
+          font-size: var(--fz-lg);
+          line-height: 1.5;
+        }
+        @media (min-width: ${breakpoints.desktop}px) {
+          font-size: var(--fz-xl);
+          line-height: 1.5;
+        }
+      }
+
       a {
         text-decoration: none;
         color: inherit;
+      }
+
+      section {
+        padding: 80px 0px;
       }
 
       ul,
@@ -81,29 +171,32 @@ const GlobalStyles = () => (
         position: relative;
         color: var(--green);
         text-decoration: none;
+        display: inline-block; /* Ensures the element takes up only the width of the text */
 
         &::after {
           content: "";
           position: absolute;
           left: 0;
           bottom: 0;
-          width: 0;
+          width: 100%; /* Ensure the line spans the entire width of the text */
           height: 1px;
           background-color: var(--green);
-          transition: width 0.3s var(--easing);
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.3s var(--easing);
         }
 
         &:hover::after {
-          width: 100%;
+          transform: scaleX(1);
+          transform-origin: bottom left;
         }
       }
       .numbered-section {
         display: flex;
         align-items: center;
         position: relative;
-        margin-top: 10px;
+        margin: 10px 0 40px;
         width: 100%;
-        font-size: clamp(26px, 5vw, var(--fz-heading));
         white-space: nowrap;
 
         &:before {
@@ -116,7 +209,7 @@ const GlobalStyles = () => (
           font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
           font-weight: 400;
 
-          @media (max-width: 480px) {
+          @media (min-width: 480px) {
             margin-bottom: -3px;
             margin-right: 5px;
           }
@@ -126,17 +219,23 @@ const GlobalStyles = () => (
           content: "";
           display: block;
           position: relative;
-          width: 300px;
+          width: 100%;
           height: 2px;
           margin-left: 20px;
           background-color: var(--lightest-navy);
+          top: 3px;
+          @media (min-width: ${breakpoints.mobile}px) {
+            width: 80px;
+          }
 
-          @media (max-width: 1080px) {
-            width: 200px;
+          @media (min-width: ${breakpoints.tablet}px) {
+            width: 180px;
           }
-          @media (max-width: 768px) {
-            width: 100%;
+
+          @media (min-width: ${breakpoints.desktop}px) {
+            width: 290px;
           }
+
           @media (max-width: 600px) {
             margin-left: 10px;
           }

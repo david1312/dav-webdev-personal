@@ -1,24 +1,21 @@
 import React from "react";
 import {
-  AboutWrapper,
+  AboutSectionWrapper,
   LanguageList,
   LeftSection,
   RightSection,
 } from "./About.styles";
-import { useIsMobileContext } from "@/context/IsMobileContext";
 import Link from "next/link";
 import profile from "@/assets/images/profile.webp";
 import Image from "next/image";
 import { techStacks } from "@/utils/contants";
 
 const About: React.FC = () => {
-  const { isMobile } = useIsMobileContext();
-
   return (
-    <AboutWrapper isMobile={isMobile} id="about">
+    <AboutSectionWrapper id="about">
       <h2 className="numbered-section">About Me</h2>
       <div className="inner">
-        <LeftSection isMobile={isMobile}>
+        <LeftSection>
           <p>
             Hi! I’m David, and I love building apps that make life easier. My
             passion for software development began in 2017 during my university
@@ -83,7 +80,7 @@ const About: React.FC = () => {
             </React.Fragment>
           ))}
         </LeftSection>
-        <RightSection isMobile={isMobile}>
+        <RightSection>
           <div className="wrapper">
             <Image
               src={profile.src}
@@ -95,7 +92,7 @@ const About: React.FC = () => {
           </div>
         </RightSection>
       </div>
-    </AboutWrapper>
+    </AboutSectionWrapper>
   );
 };
 

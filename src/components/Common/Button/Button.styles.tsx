@@ -6,7 +6,7 @@ export const smallButton = css`
   border: 1px solid var(--green);
   border-radius: var(--border-radius);
   padding: 0.75rem 1rem;
-  font-size: var(--fz-xs);
+  font-size: var(--fz-sm);
   font-family: var(--font-mono);
   line-height: 1;
   text-decoration: none;

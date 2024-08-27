@@ -1,11 +1,24 @@
 import styled from "@emotion/styled";
 
-interface FooterWrapperProps {
-  isMobile: boolean;
-}
-
-export const FooterWrapper = styled.footer<FooterWrapperProps>`
+export const FooterWrapper = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
   min-height: 70px;
-  padding: ${({ isMobile }) => (isMobile ? "20px 40px" : "30px 60px")};
-  display: block;
+  padding: 15px;
+  text-align: center;
+`;
+
+export const StyledCredit = styled.div`
+  max-width: 480px;
+  color: var(--light-slate);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
+  line-height: 1.5;
+
+  a {
+    padding: 10px;
+  }
 `;

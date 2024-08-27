@@ -1,4 +1,3 @@
-// src/components/MetaHead.tsx
 import { defaultMetadata } from "@/utils/contants";
 import Head from "next/head";
 
