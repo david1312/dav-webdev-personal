@@ -1,20 +1,14 @@
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Side from "./Side";
 import Link from "next/link";
-import { IconType } from "react-icons";
-import { socialMedia } from "@/utils/contants";
-
-const iconMap: Record<string, IconType> = {
-  FaGithub: FaGithub,
-  FaLinkedin: FaLinkedin,
-  FaInstagram: FaInstagram,
-};
+import { socialAccounts } from "@/utils/contants";
+import iconMap from "@/utils/iconMap";
 
 const SideLeft: React.FC = () => {
   return (
     <Side position="left">
       <ul>
-        {socialMedia.map((val, index) => {
+        {socialAccounts.map((val, index) => {
           const IconComponent = iconMap[val.icon];
           return (
             <li key={index}>

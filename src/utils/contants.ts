@@ -32,7 +32,7 @@ export const defaultMetadata: { title: string; description: string } = {
 
 export const email: string = "davidbernadi13@gmail.com";
 
-export const socialMedia: SocialMedia[] = [
+export const socialAccounts: SocialMedia[] = [
   {
     name: "GitHub",
     url: "https://github.com/david1312",

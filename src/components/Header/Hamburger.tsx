@@ -70,7 +70,7 @@ const Hamburger: React.FC = () => {
             );
           })}
         </ul>
-        <a
+        <Link
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -78,7 +78,7 @@ const Hamburger: React.FC = () => {
           onClick={handleLinkClick}
         >
           <Button label="Resume" variant="big" />
-        </a>
+        </Link>
       </Nav>
       <div className="blur-overlay" />
     </>

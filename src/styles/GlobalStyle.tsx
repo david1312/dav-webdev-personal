@@ -54,7 +54,7 @@ const GlobalStyles = () => (
 
       h1 {
         font-size: var(--fz-heading-small);
-        line-height: 1.2;
+        line-height: 1.4;
         color: var(--lightest-slate);
 
         @media (min-width: ${breakpoints.smallDevice}px) {
@@ -105,8 +105,11 @@ const GlobalStyles = () => (
       h4 {
         color: var(--green);
         font-family: var(--font-mono);
-        font-size: var(--fz-sm);
+        font-size: var(--fz-xxs);
         font-weight: 400;
+        @media (min-width: ${breakpoints.smallDevice}px) {
+          font-size: var(--fz-sm);
+        }
         @media (min-width: ${breakpoints.mobile}px) {
           font-size: var(--fz-md);
         }
@@ -240,6 +243,13 @@ const GlobalStyles = () => (
             margin-left: 10px;
           }
         }
+      }
+
+      .overline {
+        color: var(--green);
+        font-family: var(--font-mono);
+        font-size: var(--fz-md);
+        font-weight: 400;
       }
     `}
   />

@@ -1,3 +1,4 @@
+import { breakpoints } from "@/utils/contants";
 import styled from "@emotion/styled";
 
 export const FooterWrapper = styled.footer`
@@ -11,7 +12,7 @@ export const FooterWrapper = styled.footer`
   text-align: center;
 `;
 
-export const StyledCredit = styled.div`
+export const Credit = styled.div`
   max-width: 480px;
   color: var(--light-slate);
   font-family: var(--font-mono);
@@ -20,5 +21,34 @@ export const StyledCredit = styled.div`
 
   a {
     padding: 10px;
+  }
+`;
+
+export const SocialLinks = styled.div`
+  display: block;
+  width: 100%;
+  max-width: 270px;
+  margin: 0 auto 10px;
+  color: var(--light-slate);
+
+  @media (min-width: ${breakpoints.mobile}px) {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    a {
+      padding: 10px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 `;
