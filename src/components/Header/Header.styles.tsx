@@ -58,7 +58,7 @@ export const Nav = styled.nav`
   li {
     margin: 0 1rem;
     counter-increment: item 1;
-    color: var(--white);
+    color: var(--lightest-slate);
     opacity: 0; /* Start hidden */
 
     &:nth-of-type(1) {
