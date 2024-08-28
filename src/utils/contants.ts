@@ -102,7 +102,17 @@ export const techStacks: TechStack[] = [
   },
   {
     title: "Tools & Platforms",
-    items: ["Git", "Vercel", "Docker", "Webpack", "S3", "Jira", "Figma"],
+    items: [
+      "Git",
+      "Vercel",
+      "Netlify",
+      "Docker",
+      "Webpack",
+      "S3",
+      "WebSocket",
+      "Jira",
+      "Figma",
+    ],
   },
   {
     title: "Databases",

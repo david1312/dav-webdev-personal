@@ -61,11 +61,11 @@ export const Nav = styled.nav<HamburgerProps>`
   ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: ;
   }
 
   li {
-    margin: 0 1rem;
+    margin: 20px;
     counter-increment: item 1;
     color: var(--white);
 
@@ -83,21 +83,9 @@ export const Nav = styled.nav<HamburgerProps>`
       color: var(--green);
       font-size: var(--fz-sm);
     }
-  }
 
-  .resume-button {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    border: 1px solid var(--green);
-    border-radius: var(--border-radius);
-    color: var(--green);
-    font-size: var(--fz-md);
-    text-decoration: none;
-    transition: var(--transition);
-
-    &:hover {
-      background-color: var(--green-tint);
-      color: var(--dark-navy);
+    .hamburger-button {
+      padding-left: 20px;
     }
   }
 `;

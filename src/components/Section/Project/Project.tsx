@@ -1,4 +1,4 @@
-import { FaGithub, FaLink } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { ProjectWrapper, ProjectCard, ProjectGrid } from "./Project.styles";
 import Link from "next/link";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
