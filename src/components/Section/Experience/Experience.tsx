@@ -38,6 +38,7 @@ const ExperienceSection: React.FC = () => {
               tabIndex={activeTab === index ? 0 : -1}
               aria-selected={activeTab === index ? true : false}
               aria-controls={`panel-${index}`}
+              aria-label={experience.company}
             >
               {experience.company}
             </TabButton>
