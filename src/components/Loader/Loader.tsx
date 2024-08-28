@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useEffect } from "react";
 import { Container, ContainerContent } from "./Loader.styles";
 import anime from "animejs";

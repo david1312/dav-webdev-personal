@@ -50,17 +50,6 @@ const About: React.FC = () => {
             in a previous project.
           </p>
           <p>Here are a few of the tech stacks I enjoy working with:</p>
-          {/* <h3>Programming Languages:</h3>
-          <LanguageList>
-            {programmingSkills.map((val, index) => (
-              <React.Fragment key={index}>
-                <span>{val}</span>
-                {index < programmingSkills.length - 1 && (
-                  <span className="separator">|</span>
-                )}
-              </React.Fragment>
-            ))}
-          </LanguageList> */}
 
           {techStacks.map((val, index) => (
             <React.Fragment key={index}>

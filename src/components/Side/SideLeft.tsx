@@ -1,4 +1,3 @@
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Side from "./Side";
 import Link from "next/link";
 import { socialAccounts } from "@/utils/contants";

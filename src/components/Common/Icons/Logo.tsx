@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { svgStyles, textStyles } from "./Logo.styles"; // Adjust the import path as necessary
+import { svgStyles, textStyles } from "./Logo.styles";
 
 interface LogoProps {
   isLoader: boolean;

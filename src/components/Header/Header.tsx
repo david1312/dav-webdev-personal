@@ -68,7 +68,7 @@ const Header: React.FC = () => {
               })}
 
               <Link
-                href="/David_Bernadi-Resume.pdf"
+                href="/DavidBernadi-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-btn"

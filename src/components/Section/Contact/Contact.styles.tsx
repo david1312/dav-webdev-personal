@@ -5,11 +5,10 @@ import { breakpoints } from "@/utils/contants";
 export const ContactWrapper = styled.section`
   max-width: 600px;
   margin: 0 auto;
-
   text-align: center;
 
   @media (min-width: ${breakpoints.mobile}px) {
-    margin: 0 auto 90px;
+    margin: 0 auto 50px;
   }
 
   .overline {

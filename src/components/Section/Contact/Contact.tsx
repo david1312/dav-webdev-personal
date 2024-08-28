@@ -1,8 +1,6 @@
 import { ContactWrapper, EmailButton } from "./Contact.styles";
 import Link from "next/link";
 import Button from "@/components/Common/Button/Button";
-import useSmoothScroll from "@/hooks/useSmoothScroll";
-import { useIsMobileContext } from "@/context/IsMobileContext";
 import { email } from "@/utils/contants";
 
 const Contact: React.FC = () => {
@@ -11,11 +9,10 @@ const Contact: React.FC = () => {
       <h2 className="numbered-section overline">What’s Ahead?</h2>
       <h2 className="title">Get in touch</h2>
       <p>
-        While I’m happy in my current role, I’m open to new opportunities,
-        particularly remote work. If relocation is involved, I’d be especially
-        excited about opportunities in Japan, a country I love. Whether you have
-        something in mind or just want to connect, feel free to reach out—I’ll
-        do my best to respond!
+        I’m interested in exciting projects, especially those offering remote
+        work. I’d be thrilled about opportunities in Japan, a country I love.
+        Whether you have something in mind or just want to connect, feel free to
+        reach out—I’ll do my best to respond!
       </p>
 
       <EmailButton>
