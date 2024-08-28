@@ -17,6 +17,11 @@ interface Breakpoints {
   desktop: number;
 }
 
+interface Metadata {
+  title: string;
+  description: string;
+}
+
 export const breakpoints: Readonly<Breakpoints> = {
   smallDevice: 481,
   mobile: 769,
@@ -24,7 +29,7 @@ export const breakpoints: Readonly<Breakpoints> = {
   desktop: 1201,
 };
 
-export const defaultMetadata: { title: string; description: string } = {
+export const defaultMetadata: Metadata = {
   title: "David Bernadi | Software Engineer & Frontend Enthusiast",
   description:
     "Welcome to the personal site of David Bernadi, a Software Engineer with a strong focus on Frontend Development. Discover my experience, work projects, and get in touch to collaborate on modern web projects.",
@@ -39,7 +44,7 @@ export const socialAccounts: SocialMedia[] = [
     icon: "FaGithub",
   },
   {
-    name: "Linkedin",
+    name: "LinkedIn",
     url: "https://www.linkedin.com/in/david1396/",
     icon: "FaLinkedin",
   },
@@ -60,8 +65,8 @@ export const navLinks: NavLink[] = [
     href: "#experience",
   },
   {
-    name: "Work",
-    href: "#work",
+    name: "Project",
+    href: "#project",
   },
   {
     name: "Contact",
@@ -89,7 +94,7 @@ export const techStacks: TechStack[] = [
       "i18next",
       "RxJS",
       "Emotion",
-      "styled-component",
+      "styled-components",
       "Tailwind",
       "Vue",
       "Nuxt",
@@ -100,24 +105,7 @@ export const techStacks: TechStack[] = [
     items: ["Git", "Vercel", "Docker", "Webpack", "S3", "Jira", "Figma"],
   },
   {
-    title: "Database",
-    items: ["MySql", "Postgre", "Redis", "MongoDB", "Firebase"],
+    title: "Databases",
+    items: ["MySQL", "PostgreSQL", "Redis", "MongoDB", "Firebase"],
   },
 ];
-
-export const KEY_CODES = {
-  ARROW_LEFT: "ArrowLeft",
-  ARROW_LEFT_IE11: "Left",
-  ARROW_RIGHT: "ArrowRight",
-  ARROW_RIGHT_IE11: "Right",
-  ARROW_UP: "ArrowUp",
-  ARROW_UP_IE11: "Up",
-  ARROW_DOWN: "ArrowDown",
-  ARROW_DOWN_IE11: "Down",
-  ESCAPE: "Escape",
-  ESCAPE_IE11: "Esc",
-  TAB: "Tab",
-  SPACE: " ",
-  SPACE_IE11: "Spacebar",
-  ENTER: "Enter",
-};

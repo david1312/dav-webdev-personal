@@ -2,6 +2,7 @@ import About from "@/components/Section/About/About";
 import Contact from "@/components/Section/Contact/Contact";
 import Experience from "@/components/Section/Experience/Experience";
 import Intro from "@/components/Section/Intro/Intro";
+import Project from "@/components/Section/Project/Project";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Intro />
       <About />
       <Experience />
+      <Project />
       <Contact />
     </main>
   );
