@@ -1,7 +1,9 @@
+import { fadeAnimation } from "@/styles/animation";
 import { breakpoints } from "@/utils/contants";
 import styled from "@emotion/styled";
 
 export const FooterWrapper = styled.footer`
+  ${({}) => fadeAnimation("up", 0.7)};
   display: flex;
   justify-content: center;
   align-items: center;

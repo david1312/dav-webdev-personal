@@ -21,12 +21,7 @@ interface Experience {
 
 const ExperienceSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [initialLoad, setInitialLoad] = useState(true);
   const experiences: Experience[] = experienceData as Experience[];
-
-  useEffect(() => {
-    setInitialLoad(false);
-  }, []);
 
   return (
     <ExperienceWrapper id="experience">

@@ -11,7 +11,7 @@ const Intro: React.FC = () => {
     <IntroWrapper>
       <h4>Hello, My name is</h4>
       <h1>David Bernadi.</h1>
-      <h1 className="intro-desc">I build digital ideas into reality.</h1>
+      <h1 className="intro-desc">I turn digital ideas into reality.</h1>
       <p>
         Experienced software engineer and frontend enthusiast, dedicated to
         crafting accessible, high-quality digital experiences. Currently working

@@ -1,44 +1,45 @@
 [
   {
-    "title": "Web Onboarding",
-    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
-    "github": "https://www.ocbc.id/en",
-    "url": "https://www.ocbc.id/en",
-    "stacks": ["Next.js", "React", "asd"]
+    "title": "Web Onboarding OCBC",
+    "desc": "A self-guided onboarding web application built with React and TypeScript, allowing customers to effortlessly apply for bank products on their own through their devices.",
+    "source": "",
+    "url": "https://onboarding.ocbc.id/",
+    "stacks": ["React", "Typescript", "i18n", "Go"]
   },
   {
     "title": "Personal Web",
-    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
-    "github": "https://www.ocbc.id/en",
-    "url": "https://www.ocbc.id/en",
-    "stacks": ["Next.js", "React", "asd"]
+    "desc": "My personal website. Built with Next.js, TypeScript, Emotion, and anime.js, deployed with Vercel. You are here now 😎",
+    "source": "https://github.com/david1312/dav-webdev-personal",
+    "url": "#project",
+    "stacks": ["Next.js", "Typescript", "Emotion", "anime.js"],
+    "current": true
   },
   {
     "title": "Company Profile",
-    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
-    "github": "https://www.ocbc.id/en",
-    "url": "https://www.ocbc.id/en",
-    "stacks": ["Next.js", "React", "asd"]
+    "desc": "This project involves experimenting with various features and capabilities of Next.js using the app router. It also serves as the foundation for a personal project where I'm helping my sibling create a prototype web company profile for a crypto miner company.",
+    "source": "https://github.com/david1312/company-profile-nextjs",
+    "url": "https://bitboltz.co.id/",
+    "stacks": ["Next.js", "Typescript", "Tailwind", "flowbite", "cheerio"]
   },
   {
     "title": "Movie Catalogue using NUXT",
-    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
-    "github": "https://www.ocbc.id/en",
-    "url": "https://www.ocbc.id/en",
-    "stacks": ["Next.js", "React", "asd"]
+    "desc": "My first Nuxt 3 app, serving as a playground for learning and experimenting with Vue and Nuxt.",
+    "source": "https://github.com/david1312/nuxt-movie",
+    "url": "https://nuxt3-movie-app-dav13.netlify.app/",
+    "stacks": ["Nuxt 3", "Vue", "WebSocket", "Tailwind"]
   },
   {
     "title": "Golang Rest API",
-    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
-    "github": "https://www.ocbc.id/en",
-    "url": "https://www.ocbc.id/en",
-    "stacks": ["Next.js", "React", "asd"]
+    "desc": "My personal project for building a Golang REST API, demonstrating practices in structuring a Go project, managing dependencies, handling APIs, and performing database migrations.",
+    "source": "https://github.com/david1312/go-personal-backend",
+    "url": "",
+    "stacks": ["Go"]
   },
   {
     "title": "Terra Smart Tracker",
-    "desc": "Developed a web app, mainly built with React and TypeScript, for customers to apply for bank products through relationship managers transforming manual onboarding processes and reducing onboarding time from hours to under 10 minutes.",
-    "github": "https://www.ocbc.id/en",
+    "desc": "An Android app for a GPS-based tractor rental system using PHP for the backend and PhoneGap for the UI, integrating GPS to monitor usage, send service reminders, and ensure accurate cost calculation.",
+    "source": "",
     "url": "https://play.google.com/store/apps/details?id=tracker.gps_terra.id",
-    "stacks": ["Next.js", "React", "asd"]
+    "stacks": ["Phonegap", "HTML", "CSS", "Javascript", "PHP"]
   }
 ]
