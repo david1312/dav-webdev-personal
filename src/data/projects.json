@@ -15,15 +15,15 @@
     "current": true
   },
   {
-    "title": "Company Profile",
-    "desc": "This project involves experimenting with various features and capabilities of Next.js using the app router. It also serves as the foundation for a personal project where I'm helping my sibling create a prototype web company profile for a crypto miner company.",
-    "source": "https://github.com/david1312/company-profile-nextjs",
-    "url": "https://bitboltz.co.id/",
-    "stacks": ["Next.js", "Typescript", "Tailwind", "flowbite", "cheerio"]
+    "title": "Terra Smart Tracker",
+    "desc": "An Android app for a GPS-based tractor rental system using PHP for the backend and PhoneGap for the UI, integrating GPS to monitor usage, send service reminders, and ensure accurate cost calculation.",
+    "source": "",
+    "url": "https://play.google.com/store/apps/details?id=tracker.gps_terra.id",
+    "stacks": ["Phonegap", "HTML", "CSS", "Javascript", "PHP"]
   },
   {
     "title": "Movie Catalogue using NUXT",
-    "desc": "My first Nuxt 3 app, serving as a playground for learning and experimenting with Vue and Nuxt.",
+    "desc": "Playground for experimenting with Vue and Nuxt. A chat feature using WebSocket was removed in production due to serverless hosting limits, but you can try it locally on the feat/chat-plugin branch.",
     "source": "https://github.com/david1312/nuxt-movie",
     "url": "https://nuxt3-movie-app-dav13.netlify.app/",
     "stacks": ["Nuxt 3", "Vue", "WebSocket", "Tailwind"]
@@ -36,10 +36,10 @@
     "stacks": ["Go"]
   },
   {
-    "title": "Terra Smart Tracker",
-    "desc": "An Android app for a GPS-based tractor rental system using PHP for the backend and PhoneGap for the UI, integrating GPS to monitor usage, send service reminders, and ensure accurate cost calculation.",
-    "source": "",
-    "url": "https://play.google.com/store/apps/details?id=tracker.gps_terra.id",
-    "stacks": ["Phonegap", "HTML", "CSS", "Javascript", "PHP"]
+    "title": "Company Profile",
+    "desc": "This project explores Next.js features using the app router and forms the basis for a personal project where I’m helping my sibling build a prototype web company profile for a crypto miner company.",
+    "source": "https://github.com/david1312/company-profile-nextjs",
+    "url": "https://bitboltz.co.id/",
+    "stacks": ["Next.js", "Typescript", "Tailwind", "flowbite", "cheerio"]
   }
 ]
