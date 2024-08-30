@@ -10,7 +10,10 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   height: auto;
   min-height: 70px;
-  padding: 15px;
+  padding: 40px 15px 15px 15px;
+  @media (min-width: ${breakpoints.mobile}px) {
+    padding: 100px 15px 15px 15px;
+  }
   text-align: center;
 `;
 

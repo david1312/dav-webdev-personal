@@ -3,7 +3,6 @@ import { breakpoints } from "@/utils/contants";
 import styled from "@emotion/styled";
 
 export const ProjectWrapper = styled.section`
-  padding: 50px 0;
   h2 {
     ${({}) => fadeAnimation("down", 0.7)};
   }

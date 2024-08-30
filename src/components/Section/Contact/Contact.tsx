@@ -9,10 +9,9 @@ const Contact: React.FC = () => {
       <h2 className="numbered-section overline">What’s Ahead?</h2>
       <h2 className="title">Get in touch</h2>
       <p>
-        I’m interested in exciting projects, especially those offering remote
-        work. I’d be thrilled about opportunities in Japan, a country I love.
-        Whether you have something in mind or just want to connect, feel free to
-        reach out—I’ll do my best to respond!
+        Some say the best journeys begin with a simple hello. If you’d like to
+        connect or have something in mind, feel free to reach out—I’ll do my
+        best to respond!
       </p>
 
       <EmailButton>

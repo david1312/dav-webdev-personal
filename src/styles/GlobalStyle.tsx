@@ -139,7 +139,7 @@ const GlobalStyles = () => (
       }
 
       section {
-        padding: 80px 0px;
+        padding: 100px 0px;
       }
 
       ul,
