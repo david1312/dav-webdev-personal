@@ -28,6 +28,7 @@ const GlobalStyles = () => (
 
       main {
         counter-reset: section;
+        padding: 0 30px;
 
         @media (min-width: ${breakpoints.mobile}px) {
           padding: 0 150px;
@@ -36,8 +37,6 @@ const GlobalStyles = () => (
         @media (min-width: ${breakpoints.desktop}px) {
           padding: 0 200px;
         }
-
-        padding: 0 30px;
       }
 
       h1,
