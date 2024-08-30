@@ -10,9 +10,14 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   height: auto;
   min-height: 70px;
-  padding: 40px 15px 15px 15px;
+  padding: 35px 30px 15px;
+
+  @media (min-width: ${breakpoints.smallDevice}px) {
+    padding: 70px 30px 15px;
+  }
+
   @media (min-width: ${breakpoints.mobile}px) {
-    padding: 100px 15px 15px 15px;
+    padding: 100px 30px 15px;
   }
   text-align: center;
 `;
@@ -20,12 +25,15 @@ export const FooterWrapper = styled.footer`
 export const Credit = styled.div`
   max-width: 480px;
   color: var(--light-slate);
+  font-size: 10px;
   font-family: var(--font-mono);
-  font-size: var(--fz-xxs);
   line-height: 1.5;
-
   a {
     padding: 10px;
+  }
+
+  @media (min-width: ${breakpoints.smallDevice}px) {
+    font-size: var(--fz-xxs);
   }
 `;
 

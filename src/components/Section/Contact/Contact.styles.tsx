@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { fadeAnimation } from "@/styles/animation";
-// import { breakpoints } from "@/utils/contants";
 
 export const ContactWrapper = styled.section`
   max-width: 600px;
