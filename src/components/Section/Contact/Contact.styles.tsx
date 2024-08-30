@@ -1,15 +1,11 @@
 import styled from "@emotion/styled";
 import { fadeAnimation } from "@/styles/animation";
-import { breakpoints } from "@/utils/contants";
+// import { breakpoints } from "@/utils/contants";
 
 export const ContactWrapper = styled.section`
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-
-  @media (min-width: ${breakpoints.mobile}px) {
-    margin: 0 auto 50px;
-  }
 
   .overline {
     ${({}) => fadeAnimation("down", 0.7)};
