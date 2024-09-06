@@ -9,6 +9,7 @@ import MetaHead from "@/components/MetaHead/MetaHead";
 import SideRight from "@/components/Side/SideRight";
 import SideLeft from "@/components/Side/SideLeft";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -31,6 +32,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         )}
       </IsMobileProvider>
       <Analytics />
+      <SpeedInsights />
     </>
   );
 };
