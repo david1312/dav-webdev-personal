@@ -40,6 +40,13 @@
     "desc": "This project explores Next.js features using the app router and forms the basis for a personal project where I’m helping my sibling build a prototype web company profile for a crypto miner company.",
     "source": "https://github.com/david1312/company-profile-nextjs",
     "url": "https://company-profile-nextjs-pearl.vercel.app/",
-    "stacks": ["Next.js", "Typescript", "Tailwind", "flowbite", "cheerio"]
+    "stacks": [
+      "Next.js",
+      "Typescript",
+      "Tailwind",
+      "flowbite",
+      "cheerio",
+      "chart.js"
+    ]
   }
 ]
