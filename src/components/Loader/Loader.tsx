@@ -18,20 +18,20 @@ const Loader: React.FC<LoaderProps> = ({ finishLoading }) => {
     anim
       .add({
         targets: "#logo path",
-        delay: 300,
-        duration: 1500,
+        delay: 100,
+        duration: 500,
         easing: "easeInOutQuart",
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
         targets: "#logo #D",
-        duration: 700,
+        duration: 400,
         easing: "easeInOutQuart",
         opacity: 1,
       })
       .add({
         targets: "#logo",
-        delay: 500,
+        delay: 100,
         duration: 300,
         easing: "easeInOutQuart",
         opacity: 0,
