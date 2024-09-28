@@ -82,7 +82,7 @@ interface TechStack {
 export const techStacks: TechStack[] = [
   {
     title: "Programming Languages",
-    items: ["Javascript", "Typescript", "HTML", "CSS", "Golang", "PHP"],
+    items: ["Javascript", "Typescript", "HTML", "CSS", "Golang"],
   },
   {
     title: "Libraries & Frameworks",
@@ -98,6 +98,9 @@ export const techStacks: TechStack[] = [
       "Tailwind",
       "Vue",
       "Nuxt",
+      "Express",
+      "Gin",
+      "Electron",
     ],
   },
   {
