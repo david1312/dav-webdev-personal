@@ -113,6 +113,7 @@ export const techStacks: TechStack[] = [
       "Webpack",
       "S3",
       "WebSocket",
+      "Kafka",
       "Jira",
       "Figma",
     ],
