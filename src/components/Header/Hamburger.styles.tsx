@@ -61,7 +61,6 @@ export const Nav = styled.nav<HamburgerProps>`
   ul {
     list-style: none;
     padding: 0;
-    margin: ;
   }
 
   li {
