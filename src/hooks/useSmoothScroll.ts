@@ -4,7 +4,7 @@ const useSmoothScroll = () => {
   const handleClickSectionLink = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
       e.preventDefault();
-      const targetId = e.currentTarget.getAttribute("href")!.slice(2);
+      const targetId = e.currentTarget.getAttribute("href")!.slice(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         window.scrollTo({
