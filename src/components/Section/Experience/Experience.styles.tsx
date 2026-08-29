@@ -75,12 +75,8 @@ export const TabButton = styled.button<{ isActive: boolean }>`
   }
 `;
 
-interface TabContentProps {
-  key: number;
-}
-
-export const TabContent = styled.div<TabContentProps>`
-  ${({ key }) => fadeAnimation("left", 0.1)};
+export const TabContent = styled.div`
+  ${fadeAnimation("left", 0.1)};
   color: var(--light-slate);
   h3 {
     font-family: var(--font-sans);
